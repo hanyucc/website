@@ -488,13 +488,16 @@ PUBLICATIONS = {
 
 COURSES = [
   Course(
-    name = '15-468/668/868 Physics-based Rendering',
+    name = 'Physics-based Rendering (CMU 15-468/668/868)',
     semesters = [
-      Resource(name='Spring 2023')
+      Resource(
+        name='Spring 2023',
+        path='http://graphics.cs.cmu.edu/courses/15-468'
+      )
     ]
   ),
   Course(
-    name = '21-373 Algebraic Structures',
+    name = 'Algebraic Structures (CMU 21-373)',
     semesters = [
       Resource(name='Fall 2022')
     ]
@@ -539,22 +542,7 @@ PROJECT_PAGES = {
       )
     ],
     acknowledgements = 'This work was generously supported by XYZ',
-    citation = '''
-    @article{
-      Miller:BVC:2023,
-      title={Boundary Value Caching for Walk on Spheres},
-      volume={42},
-      ISSN={1557-7368},
-      url={http://dx.doi.org/10.1145/3592400},
-      DOI={10.1145/3592400},
-      number={4},
-      journal={ACM Transactions on Graphics},
-      publisher={Association for Computing Machinery (ACM)},
-      author={Miller, Bailey and Sawhney, Rohan and Crane, Keenan and Gkioulekas, Ioannis},
-      year={2023},
-      month=jul, 
-      pages={1-11}
-    }'''
+    citation = ''''''
   )
 }
 
@@ -574,5 +562,3 @@ if __name__ == '__main__':
     project_path = os.path.join(directory, f'project/{id}')
     paper = PUBLICATIONS[id]
     project.generate(project_path, paper)
-
-
