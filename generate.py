@@ -413,8 +413,8 @@ class Project:
 
 PEOPLE = {
   'your-name': Person(
-    name = 'Your Name',
-    website = '',
+    name = 'Hanyu Chen',
+    website = 'https://hanyuc.com',
     me = True
   ),
   'coauthor-name': Person(
@@ -424,8 +424,8 @@ PEOPLE = {
 }
 
 ABOUT_ME = AboutMe(
-  name = 'Your Name',
-  image = 'https://placehold.co/400', 
+  name = 'Hanyu Chen',
+  image = 'data/images/profile.jpg', 
   resources=[
     Resource(
       icon=FontAwesomeIcons.MAP_MARKER,
@@ -434,19 +434,19 @@ ABOUT_ME = AboutMe(
     ),
     Resource(
       icon=FontAwesomeIcons.ENVELOPE,
-      name='your-email@gmail.com',
-      path='mailto:your-email@gmail.com'
+      name='hanyu.c.536@gmail.com',
+      path='mailto:hanyu.c.536@gmail.com'
     ),
     Resource(
       icon=FontAwesomeIcons.GITHUB,
       name='Github',
-      path='https://github.com'
+      path='https://github.com/leniumc'
     ),
-    Resource(
-      icon=FontAwesomeIcons.GRAD_CAP,
-      name='Google Scholar',
-      path='https://scholar.google.com'
-    ),
+    # Resource(
+    #   icon=FontAwesomeIcons.GRAD_CAP,
+    #   name='Google Scholar',
+    #   path='https://scholar.google.com'
+    # ),
     Resource(
       icon=FontAwesomeIcons.FILE,
       name='CV',
@@ -488,17 +488,15 @@ PUBLICATIONS = {
 
 COURSES = [
   Course(
-    name = 'Course 1',
+    name = '15-468/668/868 Physics-based Rendering',
     semesters = [
-      Resource(name='Fall 2023')
+      Resource(name='Spring 2023')
     ]
   ),
   Course(
-    name = 'Course 2',
+    name = '21-373 Algebraic Structures',
     semesters = [
-      Resource(
-        name='Spring 2021'
-      )
+      Resource(name='Fall 2022')
     ]
   )
 ]
@@ -562,7 +560,7 @@ PROJECT_PAGES = {
 
 
 if __name__ == '__main__':
-  directory = 'www.your-website.com/'
+  directory = 'hanyuc.com/'
   if not os.path.exists(directory):
     os.makedirs(directory)
 
