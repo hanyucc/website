@@ -66,13 +66,13 @@ class Publication:
         names += f'<a href={author.website}>{name}</a>'
 
       else:
-        names += name
+        names += f'<a>{name}</a>'
       
       if i < len(self.authors) - 1:
         names += ', '
       elif i == len(self.authors) - 2:
         names += 'and'
-    
+
     return names
 
   def get_resources(self):
@@ -224,6 +224,8 @@ class Home:
     ]
     [head.append(link) for link in links]
 
+    head.append(BeautifulSoup(f'<title>{self.about_me.name}</title>', 'html.parser'))
+
     # construct page
     body = soup.new_tag('body')
     soup.html.append(body)
@@ -245,7 +247,6 @@ class Home:
             <div id="publications-list" class="pt-1">
               {publications_list}
             </div>
-            <div class="pb-5">(*, &dagger; indicates equal contribution)</div>
           </div>
           <div>
             <h3>Teaching Assistant</h3>
@@ -256,7 +257,7 @@ class Home:
       </div>
     ''', 'html.parser'))
     with open(os.path.join(path, 'index.html'), "w") as file:
-      file.write(str(soup.prettify(formatter="html")))
+      file.write(str(soup))
 
 class Project:
   def __init__(self, 
@@ -412,13 +413,21 @@ class Project:
       file.write(str(soup.prettify(formatter="html")))
 
 PEOPLE = {
-  'your-name': Person(
+  'hanyu-chen': Person(
     name = 'Hanyu Chen',
     website = 'https://hanyuc.com',
     me = True
   ),
-  'coauthor-name': Person(
-    name = 'Coauthor Name',
+  'ioannis-gkioulekas': Person(
+    name = 'Ioannis Gkioulekas',
+    website = 'https://www.cs.cmu.edu/~igkioule/'
+  ),
+  'bailey-miller': Person(
+    name = 'Bailey Miller',
+    website = 'https://www.bailey-miller.com/'
+  ),
+  'alice-lai': Person(
+    name = 'Alice Lai',
     website = ''
   )
 }
@@ -455,33 +464,39 @@ ABOUT_ME = AboutMe(
   ]
 )
 
-BIO = '''Add your bio here'''
+BIO = '''
+I am a master's student in the <a href="https://www.cs.cmu.edu/">School of Computer Science</a> at <a href="https://www.cmu.edu/">Carnegie Mellon University</a>, 
+advised by <a href="https://www.cs.cmu.edu/~igkioule/">Prof. Ioannis Gkioulekas</a>. My research interest is in differentiable and neural rendering. 
+Prior to starting my master's program, I received a Bachelor of Science in Computer Science from Carnegie Mellon University with an additional major in Mathematical Sciences.
+'''
 
 PUBLICATIONS = {
   'pub1': Publication(
     image =  'https://placehold.co/400.png',
-    title =  'Your Project Name',
+    title =  'A Theory of Volumetric Representations for Opaque Solids',
     authors =  [
-      PEOPLE['your-name'],
-      PEOPLE['coauthor-name']
+      PEOPLE['bailey-miller'],
+      PEOPLE['hanyu-chen'],
+      PEOPLE['alice-lai'],
+      PEOPLE['ioannis-gkioulekas']
     ],
-    venue = 'ACM Transactions on Graphics',
+    venue = 'arXiv pre-print',
     resources = [
       Resource(
         icon = FontAwesomeIcons.GLOBE,
         name = 'project',
-        path = 'project/pub1'
+        path = 'https://imaging.cs.cmu.edu/volumetric_opaque_solids'
       ),
       Resource(
         icon = FontAwesomeIcons.PDF,
         name = 'paper',
         path = 'data/papers/pub1.pdf'
       ),
-      Resource(
-        icon = FontAwesomeIcons.BOOK,
-        name = 'publisher version',
-        path = 'https://www.acm.org/'
-      )
+      # Resource(
+      #   icon = FontAwesomeIcons.BOOK,
+      #   name = 'publisher version',
+      #   path = 'https://www.acm.org/'
+      # )
     ]
   )
 }
@@ -505,45 +520,45 @@ COURSES = [
 ]
 
 PROJECT_PAGES = {
-  'pub1': Project(
-    image = 'https://placehold.co/800x400.png',
-    image_caption = 'placeholder caption',
-    abstract = 'placeholder abstract',
-    resources = ProjectResources(
-      publication = [
-        Resource(
-          icon = FontAwesomeIcons.PDF,
-          path = '../../data/papers/pub1.pdf',
-          name = 'Paper'
-        ),
-        Resource(
-          icon = FontAwesomeIcons.BOOK,
-          path = 'https://www.acm.org/',
-          name =  'Publisher\'s Version'
-        ),
-        Resource(
-          icon =  FontAwesomeIcons.ARCHIVE,
-          path =  'https://arxiv.org',
-          name =  'ArXiv Version'
-        )
-      ],
-      code = [
-        Resource(
-          icon =  FontAwesomeIcons.GITHUB,
-          path =  'https://github.com',
-          name = 'Github project with full source code'
-        )
-      ],
-    ),
-    videos = [
-      Video(
-        name =  'presentation slides',
-        id = 'J9o7kgrpco0'
-      )
-    ],
-    acknowledgements = 'This work was generously supported by XYZ',
-    citation = ''''''
-  )
+  # 'pub1': Project(
+  #   image = 'https://placehold.co/800x400.png',
+  #   image_caption = 'placeholder caption',
+  #   abstract = 'placeholder abstract',
+  #   resources = ProjectResources(
+  #     publication = [
+  #       Resource(
+  #         icon = FontAwesomeIcons.PDF,
+  #         path = '../../data/papers/pub1.pdf',
+  #         name = 'Paper'
+  #       ),
+  #       Resource(
+  #         icon = FontAwesomeIcons.BOOK,
+  #         path = 'https://www.acm.org/',
+  #         name =  'Publisher\'s Version'
+  #       ),
+  #       Resource(
+  #         icon =  FontAwesomeIcons.ARCHIVE,
+  #         path =  'https://arxiv.org',
+  #         name =  'ArXiv Version'
+  #       )
+  #     ],
+  #     code = [
+  #       Resource(
+  #         icon =  FontAwesomeIcons.GITHUB,
+  #         path =  'https://github.com',
+  #         name = 'Github project with full source code'
+  #       )
+  #     ],
+  #   ),
+  #   videos = [
+  #     Video(
+  #       name =  'presentation slides',
+  #       id = 'J9o7kgrpco0'
+  #     )
+  #   ],
+  #   acknowledgements = 'This work was generously supported by XYZ',
+  #   citation = ''''''
+  # )
 }
 
 

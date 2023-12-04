@@ -6,9 +6,9 @@ body {
   height: 250px;
   width: 250px;
   display: block;
-  padding: 0.25rem;
+  padding: 0.1rem;
   border: 1px solid #dee2e6;
-  border-radius:  0.25rem;
+  border-radius: 0.1rem;
 }
 
 .profile-row {
@@ -28,7 +28,7 @@ body {
 .citation-content {
   position: absolute;
   border-radius: 10px;
-  background-color:white;
+  background-color: white;
   opacity: 0.95;
   font-size: 12px;
   font-weight: bold;
@@ -37,11 +37,12 @@ body {
   display: none;
 }
 
-.citation-content:hover, .citation:hover + .citation-content {
+.citation-content:hover,
+.citation:hover+.citation-content {
   position: absolute;
   display: block;
-  box-shadow: 7px 6px 33px -8px rgba(0,0,0,0.86);
-  z-index:1000;
+  box-shadow: 7px 6px 33px -8px rgba(0, 0, 0, 0.86);
+  z-index: 1000;
 }
 
 .project-video {
@@ -54,7 +55,7 @@ body {
   float: right;
   border: none;
   background-color: #e7e7e7;
-  border-radius: 5px; 
+  border-radius: 5px;
 }
 
 .code-copy-btn:hover {
@@ -66,5 +67,11 @@ body {
   padding: 5px;
   border: 1px solid #ddd;
   overflow: auto;
-  border-radius: 5px; 
+  border-radius: 5px;
+}
+
+.fa {
+  width: 16px;
+  height: 16px;
+  text-align: center;
 }
