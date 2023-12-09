@@ -89,19 +89,16 @@ body {
 }
 
 body {
-  min-height: 100vh;
+  min-height: 80vh;
   position: relative;
 }
 
 .faux-footer {
-  height: 3rem;
+  height: 5rem;
 }
 
 .bottom-centered {
-  position: absolute;
-  bottom: 3rem;
-  left: 50%;
-  transform: translateX(-50%);
+  text-align: center;
 }
 
 a {

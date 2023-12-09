@@ -255,7 +255,7 @@ class Home:
         </div>
         <div class="faux-footer"></div>
         <div class="bottom-centered">
-          Design and source code based on <a href="https://www.bailey-miller.com/">Bailey Miller's website</a>.
+          Design and source code based on <br><a href="https://www.bailey-miller.com/">Bailey Miller's website</a>.
         </div>
       </div>
     ''', 'html.parser'))
@@ -452,7 +452,7 @@ ABOUT_ME = AboutMe(
     Resource(
       icon=FontAwesomeIcons.GITHUB,
       name='Github',
-      path='https://github.com/leniumc'
+      path='https://github.com/hanyucc'
     ),
     # Resource(
     #   icon=FontAwesomeIcons.GRAD_CAP,
