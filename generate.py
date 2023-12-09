@@ -136,7 +136,7 @@ class AboutMe:
             id="profile-pic"
             class="float-left"
             src="{self.image}"
-            alt="Bailey"
+            alt="Hanyu"
           />
         </div>
         <div class="col">
@@ -252,6 +252,10 @@ class Home:
             <hr/>
             {teaching_list}
           </div>
+        </div>
+        <div class="faux-footer"></div>
+        <div class="bottom-centered">
+          Design and source code based on <a href="https://www.bailey-miller.com/">Bailey Miller's website</a>.
         </div>
       </div>
     ''', 'html.parser'))

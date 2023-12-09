@@ -18,8 +18,10 @@ body {
 }
 
 .publication-thumbnail {
-  width: 120px;
-  height: 120px;
+  width: 200px;
+  height: 200px;
+  padding: 0.1rem;
+  border-radius: 0.1rem;
 }
 
 .citation-container {
@@ -84,6 +86,22 @@ body {
 .col {
   padding-left: 30px;
   padding-right: 30px;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+}
+
+.faux-footer {
+  height: 3rem;
+}
+
+.bottom-centered {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 a {
