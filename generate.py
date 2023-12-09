@@ -141,7 +141,7 @@ class AboutMe:
         </div>
         <div class="col">
           <div class="d-block profile-row">
-            <h1>{self.name}</h1>
+            <h1 class="name">{self.name}</h1>
           </div>
           {links}
         </div>
@@ -201,8 +201,7 @@ class Home:
       teaching_list += f'''
         <li>
           <h6>
-            {course.name}
-            {course_links}
+            {course.name}, {course_links}
           </h6
         </li>
       '''
@@ -428,7 +427,7 @@ PEOPLE = {
   ),
   'alice-lai': Person(
     name = 'Alice Lai',
-    website = ''
+    website = 'https://www.linkedin.com/in/alicelai5/'
   )
 }
 
@@ -436,14 +435,14 @@ ABOUT_ME = AboutMe(
   name = 'Hanyu Chen',
   image = 'data/images/profile.jpg', 
   resources=[
-    Resource(
-      icon=FontAwesomeIcons.MAP_MARKER,
-      name='Carnegie-Mellon University',
-      path='https://www.cs.cmu.edu'
-    ),
+    # Resource(
+    #   icon=FontAwesomeIcons.MAP_MARKER,
+    #   name='Carnegie-Mellon University',
+    #   path='https://www.cs.cmu.edu'
+    # ),
     Resource(
       icon=FontAwesomeIcons.ENVELOPE,
-      name='hanyu.c.536@gmail.com',
+      name='Email',
       path='mailto:hanyu.c.536@gmail.com'
     ),
     Resource(
@@ -456,6 +455,11 @@ ABOUT_ME = AboutMe(
     #   name='Google Scholar',
     #   path='https://scholar.google.com'
     # ),
+    Resource(
+      icon=FontAwesomeIcons.LINKEDIN,
+      name='LinkedIn',
+      path='https://www.linkedin.com/in/hanyu-chen-9ba563179/'
+    ),
     Resource(
       icon=FontAwesomeIcons.FILE,
       name='CV',
@@ -514,7 +518,9 @@ COURSES = [
   Course(
     name = 'Algebraic Structures (CMU 21-373)',
     semesters = [
-      Resource(name='Fall 2022')
+      Resource(
+        name='Fall 2022',
+        path='http://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/courses/#:~:text=21%2D373%20Algebraic%20Structures')
     ]
   )
 ]
