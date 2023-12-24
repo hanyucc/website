@@ -29,19 +29,19 @@ class Person:
   def __init__(self, name, website, me = False):
     self.name = name
     self.website = website
-    self.me = me 
+    self.me = me
 
 class Publication:
-  def __init__(self, 
-               image, 
-               title, 
-               authors = [], 
+  def __init__(self,
+               image,
+               title,
+               authors = [],
                joint_authors = {},
-               venue = '', 
+               venue = '',
                resources = []):
     self.image = image
-    self.title = title 
-    self.authors = authors 
+    self.title = title
+    self.authors = authors
     self.joint_authors = joint_authors
     self.venue = venue
     self.resources = resources
@@ -67,7 +67,7 @@ class Publication:
 
       else:
         names += f'<a>{name}</a>'
-      
+
       if i < len(self.authors) - 1:
         names += ', '
       elif i == len(self.authors) - 2:
@@ -76,7 +76,7 @@ class Publication:
     return names
 
   def get_resources(self):
-    resource_list = '' 
+    resource_list = ''
     for resource in self.resources:
       resource_list += f'''
         <div class="pr-3">
@@ -152,7 +152,7 @@ class Home:
   def __init__(self, about_me, bio, publications = [], courses = []):
     self.about_me = about_me
     self.bio = bio
-    self.publications = publications 
+    self.publications = publications
     self.courses = courses
 
   def get_publications_list_html(self):
@@ -213,11 +213,11 @@ class Home:
   def generate(self, path):
     soup = BeautifulSoup('<!DOCTYPE html> <html></html>', 'html.parser')
 
-    # add styling 
+    # add styling
     head = soup.new_tag('head')
     soup.html.append(head)
     links = [
-      soup.new_tag('link', rel='stylesheet', type='text/css', 
+      soup.new_tag('link', rel='stylesheet', type='text/css',
                    href=os.path.join('assets', style_asset))
       for style_asset in STYLE_ASSETS
     ]
@@ -231,9 +231,9 @@ class Home:
     about_me_section = self.about_me.get_html()
     publications_list = self.get_publications_list_html()
     teaching_list = self.get_teaching_list_html()
-    body.append(BeautifulSoup(f''' 
+    body.append(BeautifulSoup(f'''
       <div class="container">
-        {about_me_section} 
+        {about_me_section}
       </div>
       <div class="container">
         <div class="d-flex flex-column pl-5 pt-3">
@@ -263,13 +263,13 @@ class Home:
       file.write(str(soup))
 
 class Project:
-  def __init__(self, 
+  def __init__(self,
                image,
-               image_caption, 
-               abstract, 
-               videos = [], 
-               resources = ProjectResources(), 
-               acknowledgements= '', 
+               image_caption,
+               abstract,
+               videos = [],
+               resources = ProjectResources(),
+               acknowledgements= '',
                citation = ''):
     self.image = image
     self.image_caption = image_caption
@@ -321,7 +321,7 @@ class Project:
       video_list += f'''
         <div class="img-container">
         <h4 class="font-weight-light">{video.name}</h4>
-          <iframe class="embed-responsive-item project-video" 
+          <iframe class="embed-responsive-item project-video"
                   src="https://www.youtube.com/embed/{video.id}" allowfullscreen>
           </iframe>
         </div>
@@ -335,7 +335,7 @@ class Project:
 
     if len(self.resources.publication) > 0:
       resources_html += self.create_resources_list('Publication', self.resources.publication)
-    
+
     if len(self.resources.code) > 0:
       resources_html += self.create_resources_list('Code', self.resources.code)
 
@@ -370,16 +370,16 @@ class Project:
   def generate(self, path, publication):
     soup = BeautifulSoup('<!DOCTYPE html> <html></html>', 'html.parser')
 
-    # add styling 
+    # add styling
     head = soup.new_tag('head')
     soup.html.append(head)
     links = [
-      soup.new_tag('link', rel='stylesheet', type='text/css', 
+      soup.new_tag('link', rel='stylesheet', type='text/css',
                    href=os.path.join('../../assets', style_asset))
       for style_asset in STYLE_ASSETS
     ]
-    [head.append(link) for link in links] 
-  
+    [head.append(link) for link in links]
+
     # construct page
     body = soup.new_tag('body')
     soup.html.append(body)
@@ -388,7 +388,7 @@ class Project:
         <nav class="navbar navbar-expand-lg">
           <div class="container-fluid">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item"> 
+              <li class="nav-item">
                 <a href="../../">
                 <i class="{FontAwesomeIcons.BACK_ARROW}"></i>
                 home
@@ -437,7 +437,7 @@ PEOPLE = {
 
 ABOUT_ME = AboutMe(
   name = 'Hanyu Chen',
-  image = 'data/images/profile.jpg', 
+  image = 'data/images/profile.jpg',
   resources=[
     # Resource(
     #   icon=FontAwesomeIcons.MAP_MARKER,
@@ -473,14 +473,14 @@ ABOUT_ME = AboutMe(
 )
 
 BIO = '''
-I am a master's student in the <a href="https://www.cs.cmu.edu/">School of Computer Science</a> at <a href="https://www.cmu.edu/">Carnegie Mellon University</a>, 
-advised by <a href="https://www.cs.cmu.edu/~igkioule/">Prof. Ioannis Gkioulekas</a>. My research interest is in differentiable and neural rendering. 
+I am a master's student in the <a href="https://www.cs.cmu.edu/">School of Computer Science</a> at <a href="https://www.cmu.edu/">Carnegie Mellon University</a>,
+advised by <a href="https://www.cs.cmu.edu/~igkioule/">Prof. Ioannis Gkioulekas</a>. My research interest is in differentiable and neural rendering.
 Prior to starting my master's program, I received a Bachelor of Science in Computer Science from Carnegie Mellon University with an additional major in Mathematical Sciences.
 '''
 
 PUBLICATIONS = {
   'pub1': Publication(
-    image =  'https://placehold.co/400.png',
+    image =  'data/images/thumbnails/volumetric_opaque_solids.png',
     title =  'A Theory of Volumetric Representations for Opaque Solids',
     authors =  [
       PEOPLE['bailey-miller'],
@@ -498,8 +498,8 @@ PUBLICATIONS = {
       Resource(
         icon = FontAwesomeIcons.PDF,
         name = 'paper',
-        path = 'data/papers/pub1.pdf'
-      ),
+        path = 'data/papers/volumetric_opaque_solids.pdf'
+      )
       # Resource(
       #   icon = FontAwesomeIcons.BOOK,
       #   name = 'publisher version',
@@ -577,12 +577,12 @@ if __name__ == '__main__':
   if not os.path.exists(directory):
     os.makedirs(directory)
 
-  home = Home(about_me=ABOUT_ME, 
-              bio=BIO, 
-              publications=PUBLICATIONS, 
+  home = Home(about_me=ABOUT_ME,
+              bio=BIO,
+              publications=PUBLICATIONS,
               courses=COURSES)
   home.generate(directory)
-  
+
   for id, project in PROJECT_PAGES.items():
     project_path = os.path.join(directory, f'project/{id}')
     paper = PUBLICATIONS[id]
