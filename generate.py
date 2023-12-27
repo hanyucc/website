@@ -499,12 +499,12 @@ PUBLICATIONS = {
         icon = FontAwesomeIcons.PDF,
         name = 'paper',
         path = 'data/papers/volumetric_opaque_solids.pdf'
+      ),
+      Resource(
+        icon = FontAwesomeIcons.BOOK,
+        name = 'arXiv preprint',
+        path = 'https://arxiv.org/abs/2312.15406'
       )
-      # Resource(
-      #   icon = FontAwesomeIcons.BOOK,
-      #   name = 'publisher version',
-      #   path = 'https://www.acm.org/'
-      # )
     ]
   )
 }
