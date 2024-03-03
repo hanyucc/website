@@ -18,8 +18,8 @@ body {
 }
 
 .publication-thumbnail {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   padding: 0.1rem;
   border-radius: 0.1rem;
 }
@@ -98,7 +98,7 @@ body {
 }
 
 .bottom-centered {
-  text-align: center;
+  text-align: right;
 }
 
 a {
