@@ -100,7 +100,8 @@ class Resource:
     self.name = name
 
 class Course:
-  def __init__(self, name, semesters = []):
+  def __init__(self, role, name, semesters = []):
+    self.role = role
     self.name = name
     self.semesters = semesters
 
@@ -200,16 +201,23 @@ class Home:
           '''
       teaching_list += f'''
         <li>
-          <h6>
-            {course.name}, {course_links}
-          </h6
+          <div class="d-flex flex-row pb-4">
+            <div class="d-flex flex-column pl-4">
+              <div>
+                {course.name}
+              </div>
+              <div>
+                {course.role}, {course_links}
+              </div>
+            </div>
+          </div>
         </li>
       '''
 
     teaching_list += '</ul>'
 
     return teaching_list
-
+  
   def generate(self, path):
     soup = BeautifulSoup('<!DOCTYPE html> <html></html>', 'html.parser')
 
@@ -248,7 +256,7 @@ class Home:
             </div>
           </div>
           <div>
-            <h3>Teaching Assistant</h3>
+            <h3>Teaching</h3>
             <hr/>
             {teaching_list}
           </div>
@@ -366,7 +374,7 @@ class Project:
       </div>
       '''
     )
-
+  
   def generate(self, path, publication):
     soup = BeautifulSoup('<!DOCTYPE html> <html></html>', 'html.parser')
 
@@ -473,9 +481,11 @@ ABOUT_ME = AboutMe(
 )
 
 BIO = '''
-I am a master's student in the <a href="https://www.cs.cmu.edu/">School of Computer Science</a> at <a href="https://www.cmu.edu/">Carnegie Mellon University</a>,
+<p style="font-weight:600;">I will be starting my Ph.D. in Computer Science this fall at <a href="https://www.cornell.edu/">Cornell University</a>!</p>
+
+<p> I am currently a master's student in the <a href="https://www.cs.cmu.edu/">School of Computer Science</a> at <a href="https://www.cmu.edu/">Carnegie Mellon University</a>,
 advised by <a href="https://www.cs.cmu.edu/~igkioule/">Prof. Ioannis Gkioulekas</a>. My research interest is in differentiable and neural rendering.
-Prior to starting my master's program, I received a Bachelor of Science in Computer Science from Carnegie Mellon University with an additional major in Mathematical Sciences.
+Prior to starting my master's program, I received a Bachelor of Science in Computer Science from Carnegie Mellon University with an additional major in Mathematical Sciences.</p>
 '''
 
 PUBLICATIONS = {
@@ -488,7 +498,7 @@ PUBLICATIONS = {
       PEOPLE['alice-lai'],
       PEOPLE['ioannis-gkioulekas']
     ],
-    venue = 'arXiv pre-print',
+    venue = 'CVPR, 2024 (Oral Presentation)',
     resources = [
       Resource(
         icon = FontAwesomeIcons.GLOBE,
@@ -502,7 +512,7 @@ PUBLICATIONS = {
       ),
       Resource(
         icon = FontAwesomeIcons.BOOK,
-        name = 'arXiv preprint',
+        name = 'arXiv',
         path = 'https://arxiv.org/abs/2312.15406'
       )
     ]
@@ -511,6 +521,7 @@ PUBLICATIONS = {
 
 COURSES = [
   Course(
+    role = 'Teaching Assistant',
     name = 'Physics-based Rendering (CMU 15-468/668/868)',
     semesters = [
       Resource(
@@ -520,6 +531,7 @@ COURSES = [
     ]
   ),
   Course(
+    role = 'Grader',
     name = 'Algebraic Structures (CMU 21-373)',
     semesters = [
       Resource(
