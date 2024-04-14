@@ -1,6 +1,7 @@
 body {
   padding-bottom: 50px;
   background-color: #F6F5F4;
+  font-size: 115%;
 }
 
 #profile-pic {
@@ -111,52 +112,104 @@ a:hover {
 
 
 @font-face {
+  font-family: 'Cormorant_Garamond';
+  src: url('fonts/Cormorant_Garamond/CormorantGaramond-Medium.woff') format('woff'),
+    url('fonts/Cormorant_Garamond/CormorantGaramond-Medium.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Cormorant_Garamond';
+  src: url('fonts/Cormorant_Garamond/CormorantGaramond-MediumItalic.woff') format('woff'),
+    url('fonts/Cormorant_Garamond/CormorantGaramond-MediumItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Cormorant_Garamond';
+  src: url('fonts/Cormorant_Garamond/CormorantGaramond-Bold.woff') format('woff'),
+    url('fonts/Cormorant_Garamond/CormorantGaramond-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Cormorant_Garamond';
+  src: url('fonts/Cormorant_Garamond/CormorantGaramond-BoldItalic.woff') format('woff'),
+    url('fonts/Cormorant_Garamond/CormorantGaramond-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Cormorant_Garamond';
+  src: url('fonts/Cormorant_Garamond/CormorantGaramond-SemiBold.woff') format('woff'),
+    url('fonts/Cormorant_Garamond/CormorantGaramond-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Cormorant_Garamond';
+  src: url('fonts/Cormorant_Garamond/CormorantGaramond-SemiBoldItalic.woff') format('woff'),
+    url('fonts/Cormorant_Garamond/CormorantGaramond-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
   font-family: 'Source';
-  src: url('fonts/Source_Sans_3/static/SourceSans3-Regular.woff') format('woff'),
-    url('fonts/Source_Sans_3/static/SourceSans3-Regular.ttf') format('truetype');
+  src: url('fonts/Source_Sans/SourceSans3-Regular.woff') format('woff'),
+    url('fonts/Source_Sans/SourceSans3-Regular.ttf') format('truetype');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Source';
-  src: url('fonts/Source_Sans_3/static/SourceSans3-Italic.woff') format('woff'),
-    url('fonts/Source_Sans_3/static/SourceSans3-Italic.ttf') format('truetype');
+  src: url('fonts/Source_Sans/SourceSans3-Italic.woff') format('woff'),
+    url('fonts/Source_Sans/SourceSans3-Italic.ttf') format('truetype');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Source';
-  src: url('fonts/Source_Sans_3/static/SourceSans3-Bold.woff') format('woff'),
-    url('fonts/Source_Sans_3/static/SourceSans3-Bold.ttf') format('truetype');
+  src: url('fonts/Source_Sans/SourceSans3-Bold.woff') format('woff'),
+    url('fonts/Source_Sans/SourceSans3-Bold.ttf') format('truetype');
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'Source';
-  src: url('fonts/Source_Sans_3/static/SourceSans3-BoldItalic.woff') format('woff'),
-    url('fonts/Source_Sans_3/static/SourceSans3-BoldItalic.ttf') format('truetype');
+  src: url('fonts/Source_Sans/SourceSans3-BoldItalic.woff') format('woff'),
+    url('fonts/Source_Sans/SourceSans3-BoldItalic.ttf') format('truetype');
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Source';
-  src: url('fonts/Source_Sans_3/static/SourceSans3-SemiBold.woff') format('woff'),
-    url('fonts/Source_Sans_3/static/SourceSans3-SemiBold.ttf') format('truetype');
+  src: url('fonts/Source_Sans/SourceSans3-SemiBold.woff') format('woff'),
+    url('fonts/Source_Sans/SourceSans3-SemiBold.ttf') format('truetype');
   font-weight: 600;
 }
 
 @font-face {
   font-family: 'Source';
-  src: url('fonts/Source_Sans_3/static/SourceSans3-SemiBoldItalic.woff') format('woff'),
-    url('fonts/Source_Sans_3/static/SourceSans3-SemiBoldItalic.ttf') format('truetype');
+  src: url('fonts/Source_Sans/SourceSans3-SemiBoldItalic.woff') format('woff'),
+    url('fonts/Source_Sans/SourceSans3-SemiBoldItalic.ttf') format('truetype');
   font-weight: 600;
   font-style: italic;
+}
+
+@font-face {
+  font-family: 'KaiTi';
+  src: url('fonts/华文楷体.woff') format('woff'),
+    url('fonts/华文楷体.ttf') format('truetype');
+  font-weight: normal;
 }
 
 * {
-  font-family: 'Source';
+  font-family: 'Cormorant_Garamond', 'KaiTi';
 }
 
 /* @media (min-width: 576px) {

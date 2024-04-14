@@ -137,6 +137,7 @@ class AboutMe:
             id="profile-pic"
             class="float-left"
             src="{self.image}"
+            title="Photo taken in front of Mt. Fuji"
             alt="Hanyu"
           />
         </div>
@@ -267,7 +268,7 @@ class Home:
         </div>
       </div>
     ''', 'html.parser'))
-    with open(os.path.join(path, 'index.html'), "w") as file:
+    with open(os.path.join(path, 'index.html'), 'w', encoding='utf-8') as file:
       file.write(str(soup))
 
 class Project:
@@ -444,7 +445,7 @@ PEOPLE = {
 }
 
 ABOUT_ME = AboutMe(
-  name = 'Hanyu Chen',
+  name = 'Hanyu Chen&nbsp;&nbsp;陈&nbsp;涵宇',
   image = 'data/images/profile.jpg',
   resources=[
     # Resource(
@@ -481,11 +482,12 @@ ABOUT_ME = AboutMe(
 )
 
 BIO = '''
-<p style="font-weight:600;">I will be starting my Ph.D. in Computer Science this fall at <a href="https://www.cornell.edu/">Cornell University</a>!</p>
+<p style="font-weight:bold;">I will be starting my Ph.D. in Computer Science this fall at <a href="https://www.cornell.edu/">Cornell University</a>!</p>
 
 <p> I am currently a master's student in the <a href="https://www.cs.cmu.edu/">School of Computer Science</a> at <a href="https://www.cmu.edu/">Carnegie Mellon University</a>,
-advised by <a href="https://www.cs.cmu.edu/~igkioule/">Prof. Ioannis Gkioulekas</a>. My research interest is in differentiable and neural rendering.
-Prior to starting my master's program, I received a Bachelor of Science in Computer Science from Carnegie Mellon University with an additional major in Mathematical Sciences.</p>
+advised by <a href="https://www.cs.cmu.edu/~igkioule/">Prof. Ioannis Gkioulekas</a>. My research interest lies in differentiable and neural rendering for 3D reconstruction,
+and more generally at the intersection of graphics and 3D vision. Prior to starting my master's program, I received my B.S. in Computer Science from Carnegie 
+Mellon University with an additional major in Mathematical Sciences.</p>
 '''
 
 PUBLICATIONS = {
