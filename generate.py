@@ -218,7 +218,7 @@ class Home:
     teaching_list += '</ul>'
 
     return teaching_list
-  
+
   def generate(self, path):
     soup = BeautifulSoup('<!DOCTYPE html> <html></html>', 'html.parser')
 
@@ -262,6 +262,7 @@ class Home:
             {teaching_list}
           </div>
         </div>
+        <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=080808&w=345&t=n&d=Xk_HHVeiJUpF4JiZ0hH0-kOoOQHDXrb8XCWu7rHqZCw&co=f6f5f4&cmo=3acc3a&cmn=ff5353&ct=808080'></script>
         <div class="faux-footer"></div>
         <div class="bottom-centered">
           Design and source code based on <br><a href="https://www.bailey-miller.com/">Bailey Miller's website</a>.
@@ -375,7 +376,7 @@ class Project:
       </div>
       '''
     )
-  
+
   def generate(self, path, publication):
     soup = BeautifulSoup('<!DOCTYPE html> <html></html>', 'html.parser')
 
@@ -486,7 +487,7 @@ BIO = '''
 
 <p> I am currently a master's student in the <a href="https://www.cs.cmu.edu/">School of Computer Science</a> at <a href="https://www.cmu.edu/">Carnegie Mellon University</a>,
 advised by <a href="https://www.cs.cmu.edu/~igkioule/">Prof. Ioannis Gkioulekas</a>. My research interest lies in differentiable and neural rendering for 3D reconstruction,
-and more generally at the intersection of graphics and 3D vision. Prior to starting my master's program, I received my B.S. in Computer Science from Carnegie 
+and more generally at the intersection of graphics and 3D vision. Prior to starting my master's program, I received my B.S. in Computer Science from Carnegie
 Mellon University with an additional major in Mathematical Sciences.</p>
 '''
 
