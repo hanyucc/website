@@ -262,8 +262,8 @@ class Home:
             {teaching_list}
           </div>
         </div>
-        <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=080808&w=345&t=n&d=Xk_HHVeiJUpF4JiZ0hH0-kOoOQHDXrb8XCWu7rHqZCw&co=f6f5f4&cmo=3acc3a&cmn=ff5353&ct=808080'></script>
         <div class="faux-footer"></div>
+        <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=080808&w=500&t=n&d=Xk_HHVeiJUpF4JiZ0hH0-kOoOQHDXrb8XCWu7rHqZCw&co=f6f5f4&cmo=3acc3a&cmn=ff5353&ct=808080'></script>
         <div class="bottom-centered">
           Design and source code based on <br><a href="https://www.bailey-miller.com/">Bailey Miller's website</a>.
         </div>
