@@ -529,7 +529,7 @@ COURSES = [
     semesters = [
       Resource(
         name='Spring 2023',
-        path='http://graphics.cs.cmu.edu/courses/15-468'
+        path='http://graphics.cs.cmu.edu/courses/15-468/2023_spring/'
       )
     ]
   ),
