@@ -489,8 +489,35 @@ My research interest lies in differentiable and neural rendering for 3D reconstr
 
 PUBLICATIONS = {
   'pub1': Publication(
+    image =  'data/images/thumbnails/fast_dipole_sums.png',
+    title =  '3D Reconstruction with Fast Dipole Sums',
+    authors =  [
+      PEOPLE['hanyu-chen'],
+      PEOPLE['bailey-miller'],
+      PEOPLE['ioannis-gkioulekas']
+    ],
+    venue = 'ACM Trans. on Graph. (SIGGRAPH Asia), 2024',
+    resources = [
+      Resource(
+        icon = FontAwesomeIcons.GLOBE,
+        name = 'project',
+        path = '#'
+      ),
+      Resource(
+        icon = FontAwesomeIcons.PDF,
+        name = 'paper',
+        path = '#'
+      ),
+      Resource(
+        icon = FontAwesomeIcons.BOOK,
+        name = 'arXiv',
+        path = 'https://arxiv.org/abs/2405.16788'
+      )
+    ]
+  ),
+  'pub2': Publication(
     image =  'data/images/thumbnails/volumetric_opaque_solids.png',
-    title =  'A Theory of Volumetric Representations for Opaque Solids',
+    title =  'Objects as Volumes: A Stochastic Geometry Theory for Opaque Solids',
     authors =  [
       PEOPLE['bailey-miller'],
       PEOPLE['hanyu-chen'],
@@ -519,6 +546,16 @@ PUBLICATIONS = {
 }
 
 COURSES = [
+  Course(
+    role = 'Teaching Assistant',
+    name = 'Computer Graphics Practicum (Cornell CS 4621)',
+    semesters = [
+      Resource(
+        name='Fall 2024',
+        path='https://classes.cornell.edu/browse/roster/FA24/class/CS/4621'
+      )
+    ]
+  ),
   Course(
     role = 'Teaching Assistant',
     name = 'Physics-based Rendering (CMU 15-468/668/868)',
