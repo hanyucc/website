@@ -456,7 +456,7 @@ ABOUT_ME = AboutMe(
     Resource(
       icon=FontAwesomeIcons.ENVELOPE,
       name='Email',
-      path='mailto:hanyu.c.536@gmail.com'
+      path='mailto:hanyuc@cs.cornell.edu'
     ),
     Resource(
       icon=FontAwesomeIcons.GITHUB,
