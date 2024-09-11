@@ -261,9 +261,10 @@ class Home:
             <hr/>
             {teaching_list}
           </div>
-          <div class="faux-footer"></div>
+          <div class="music-player-skip"></div>
           <iframe height="175" width="70%" title="Media player" src="https://embed.music.apple.com/us/album/weird-fishes-arpeggi/1109714933?i=1109715168&amp;itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1109715168&amp;theme=light" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;"></iframe>
         </div>
+          <div class="faux-footer"></div>
         <div class="bottom-centered">
           Design and source code based on <br><a href="https://www.bailey-miller.com/">Bailey Miller's website</a>.
         </div>

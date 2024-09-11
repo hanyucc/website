@@ -1,7 +1,7 @@
 body {
   padding-bottom: 50px;
   background-color: #f8f8fa;
-  font-size: 115%;
+  font-size: 120%;
 }
 
 #profile-pic {
@@ -99,6 +99,10 @@ body {
   height: 5rem;
 }
 
+.music-player-skip {
+  height: 2rem;
+}
+
 .bottom-centered {
   text-align: right;
 }
@@ -168,13 +172,13 @@ a:hover {
   font-family: 'CrimsonText', 'KaiTi';
 }
 
-/* @media (min-width: 576px) {
+@media (min-width: 576px) {
 
   .container,
   .container-sm {
     max-width: 700px
   }
-} */
+}
 
 @media (min-width: 768px) {
 
