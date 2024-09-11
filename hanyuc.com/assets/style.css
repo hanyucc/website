@@ -110,51 +110,51 @@ a:hover {
   color: #5068B0
 }
 
-
 @font-face {
-  font-family: 'Cormorant_Garamond';
-  src: url('fonts/Cormorant_Garamond/CormorantGaramond-Medium.woff') format('woff'),
-    url('fonts/Cormorant_Garamond/CormorantGaramond-Medium.ttf') format('truetype');
+  font-family: 'CrimsonText';
+  src: url('fonts/CrimsonText/CrimsonText-Regular.woff') format('woff'),
+    url('fonts/CrimsonText/CrimsonText-Regular.ttf') format('truetype');
   font-weight: normal;
 }
 
 @font-face {
-  font-family: 'Cormorant_Garamond';
-  src: url('fonts/Cormorant_Garamond/CormorantGaramond-MediumItalic.woff') format('woff'),
-    url('fonts/Cormorant_Garamond/CormorantGaramond-MediumItalic.ttf') format('truetype');
+  font-family: 'CrimsonText';
+  src: url('fonts/CrimsonText/CrimsonText-Italic.woff') format('woff'),
+    url('fonts/CrimsonText/CrimsonText-Italic.ttf') format('truetype');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Cormorant_Garamond';
-  src: url('fonts/Cormorant_Garamond/CormorantGaramond-Bold.woff') format('woff'),
-    url('fonts/Cormorant_Garamond/CormorantGaramond-Bold.ttf') format('truetype');
+  font-family: 'CrimsonText';
+  src: url('fonts/CrimsonText/CrimsonText-Bold.woff') format('woff'),
+    url('fonts/CrimsonText/CrimsonText-Bold.ttf') format('truetype');
   font-weight: bold;
 }
 
 @font-face {
-  font-family: 'Cormorant_Garamond';
-  src: url('fonts/Cormorant_Garamond/CormorantGaramond-BoldItalic.woff') format('woff'),
-    url('fonts/Cormorant_Garamond/CormorantGaramond-BoldItalic.ttf') format('truetype');
+  font-family: 'CrimsonText';
+  src: url('fonts/CrimsonText/CrimsonText-BoldItalic.woff') format('woff'),
+    url('fonts/CrimsonText/CrimsonText-BoldItalic.ttf') format('truetype');
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Cormorant_Garamond';
-  src: url('fonts/Cormorant_Garamond/CormorantGaramond-SemiBold.woff') format('woff'),
-    url('fonts/Cormorant_Garamond/CormorantGaramond-SemiBold.ttf') format('truetype');
+  font-family: 'CrimsonText';
+  src: url('fonts/CrimsonText/CrimsonText-SemiBold.woff') format('woff'),
+    url('fonts/CrimsonText/CrimsonText-SemiBold.ttf') format('truetype');
   font-weight: 600;
 }
 
 @font-face {
-  font-family: 'Cormorant_Garamond';
-  src: url('fonts/Cormorant_Garamond/CormorantGaramond-SemiBoldItalic.woff') format('woff'),
-    url('fonts/Cormorant_Garamond/CormorantGaramond-SemiBoldItalic.ttf') format('truetype');
+  font-family: 'CrimsonText';
+  src: url('fonts/CrimsonText/CrimsonText-SemiBoldItalic.woff') format('woff'),
+    url('fonts/CrimsonText/CrimsonText-SemiBoldItalic.ttf') format('truetype');
   font-weight: 600;
   font-style: italic;
 }
+
 
 @font-face {
   font-family: 'KaiTi';
@@ -164,7 +164,7 @@ a:hover {
 }
 
 * {
-  font-family: 'Cormorant_Garamond', 'KaiTi';
+  font-family: 'CrimsonText', 'KaiTi';
 }
 
 /* @media (min-width: 576px) {

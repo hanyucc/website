@@ -173,7 +173,7 @@ class Home:
                 {pub.get_author_names()}
               </div>
               <div>
-                <i>{pub.venue}</i>
+                {pub.venue}
               </div>
               <div class="d-flex flex-row justify-content-start pt-2">
                 {pub.get_resources()}
@@ -482,12 +482,9 @@ ABOUT_ME = AboutMe(
 )
 
 BIO = '''
-<p style="font-weight:bold;">I will be starting my Ph.D. in Computer Science this fall at <a href="https://www.cornell.edu/">Cornell University</a>!</p>
-
-<p> I am currently a master's student in the <a href="https://www.cs.cmu.edu/">School of Computer Science</a> at <a href="https://www.cmu.edu/">Carnegie Mellon University</a>,
-advised by <a href="https://www.cs.cmu.edu/~igkioule/">Prof. Ioannis Gkioulekas</a>. My research interest lies in differentiable and neural rendering for 3D reconstruction,
-and more generally at the intersection of graphics and 3D vision. Prior to starting my master's program, I received my B.S. in Computer Science from Carnegie
-Mellon University with an additional major in Mathematical Sciences.</p>
+<p>I am first year Ph.D. student in Computer Science at <a href="https://www.cornell.edu/">Cornell University</a>. Before starting my Ph.D., I received my M.S. and B.S. 
+in Computer Science from <a href="https://www.cmu.edu/">Carnegie Mellon University</a>, where I was advised by <a href="https://www.cs.cmu.edu/~igkioule/">Prof. Ioannis Gkioulekas</a>. 
+My research interest lies in differentiable and neural rendering for 3D reconstruction, and more generally at the intersection of graphics and 3D vision.</p>
 '''
 
 PUBLICATIONS = {
@@ -500,7 +497,7 @@ PUBLICATIONS = {
       PEOPLE['alice-lai'],
       PEOPLE['ioannis-gkioulekas']
     ],
-    venue = 'CVPR, 2024 (Oral Presentation)',
+    venue = 'CVPR, 2024 <span style="color: #F09858;">(best student paper honorable mention)</span>',
     resources = [
       Resource(
         icon = FontAwesomeIcons.GLOBE,
