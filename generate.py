@@ -447,7 +447,7 @@ PEOPLE = {
 }
 
 ABOUT_ME = AboutMe(
-  name = 'Hanyu Chen&nbsp;&nbsp;陈&nbsp;涵宇',
+  name = 'Hanyu Chen&nbsp;&nbsp;陈涵宇',
   image = 'data/images/profile.jpg',
   resources=[
     # Resource(
@@ -498,17 +498,17 @@ PUBLICATIONS = {
       PEOPLE['bailey-miller'],
       PEOPLE['ioannis-gkioulekas']
     ],
-    venue = 'ACM Trans. on Graph. (SIGGRAPH Asia), 2024',
+    venue = 'ACM Transactions on Graphics (SIGGRAPH Asia), 2024',
     resources = [
       Resource(
         icon = FontAwesomeIcons.GLOBE,
         name = 'project',
-        path = '#'
+        path = 'https://imaging.cs.cmu.edu/fast_dipole_sums'
       ),
       Resource(
         icon = FontAwesomeIcons.PDF,
         name = 'paper',
-        path = '#'
+        path = 'data/papers/fast_dipole_sums.pdf'
       ),
       Resource(
         icon = FontAwesomeIcons.BOOK,
@@ -526,7 +526,7 @@ PUBLICATIONS = {
       PEOPLE['alice-lai'],
       PEOPLE['ioannis-gkioulekas']
     ],
-    venue = 'CVPR, 2024 <span style="color: #F09858;">(best student paper honorable mention)</span>',
+    venue = 'IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024 <br><span style="color: #E89032;">(best student paper honorable mention)</span>',
     resources = [
       Resource(
         icon = FontAwesomeIcons.GLOBE,
