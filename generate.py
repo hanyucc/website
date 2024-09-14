@@ -519,7 +519,7 @@ PUBLICATIONS = {
   ),
   'pub2': Publication(
     image =  'data/images/thumbnails/volumetric_opaque_solids.png',
-    title =  'Objects as Volumes: A Stochastic Geometry Theory for Opaque Solids',
+    title =  'Objects as Volumes: A Stochastic Geometry View of Opaque Solids',
     authors =  [
       PEOPLE['bailey-miller'],
       PEOPLE['hanyu-chen'],
