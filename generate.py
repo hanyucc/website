@@ -240,6 +240,19 @@ class Home:
     about_me_section = self.about_me.get_html()
     publications_list = self.get_publications_list_html()
     teaching_list = self.get_teaching_list_html()
+
+    body.append(BeautifulSoup('''
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-THS1KHKPTC"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-THS1KHKPTC');
+      </script>
+    ''', 'html.parser'))
+
     body.append(BeautifulSoup(f'''
       <div class="container">
         {about_me_section}
