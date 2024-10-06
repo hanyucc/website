@@ -275,7 +275,7 @@ class Home:
             {teaching_list}
           </div>
           <div class="music-player-skip"></div>
-          <iframe height="175" width="70%" title="Media player" src="https://embed.music.apple.com/us/album/weird-fishes-arpeggi/1109714933?i=1109715168&amp;itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1109715168&amp;theme=light" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;"></iframe>
+          <iframe height="175" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/a-short-story/1053358611?i=1053358729&amp;itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1053358729&amp;theme=light" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;"></iframe>
         </div>
           <div class="faux-footer"></div>
         <div class="bottom-centered">
@@ -497,9 +497,9 @@ ABOUT_ME = AboutMe(
 )
 
 BIO = '''
-<p>I am first year Ph.D. student in Computer Science at <a href="https://www.cornell.edu/">Cornell University</a>. Before starting my Ph.D., I received my M.S. and B.S. 
-in Computer Science from <a href="https://www.cmu.edu/">Carnegie Mellon University</a>, where I was advised by <a href="https://www.cs.cmu.edu/~igkioule/">Prof. Ioannis Gkioulekas</a>. 
-My research interest lies in differentiable and neural rendering for 3D reconstruction, and more generally at the intersection of graphics and 3D vision.</p>
+<p>I am first year Ph.D. student in Computer Science at <a href="https://www.cornell.edu/">Cornell University</a> working with <a href="https://www.cs.cornell.edu/~snavely/">Prof. Noah Snavely</a>. 
+Before starting my Ph.D., I received my M.S. and B.S. in Computer Science from <a href="https://www.cmu.edu/">Carnegie Mellon University</a>, advised by <a href="https://www.cs.cmu.edu/~igkioule/">Prof. Ioannis Gkioulekas</a>. 
+My research interest lies in differentiable and neural rendering for 3D reconstruction, and more broadly at the intersection of graphics and 3D vision.</p>
 '''
 
 PUBLICATIONS = {
