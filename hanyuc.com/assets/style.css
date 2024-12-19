@@ -24,6 +24,7 @@ body {
   padding: 0.1rem;
   border-radius: 0.2rem;
   mix-blend-mode: multiply;
+  object-fit: contain;
 }
 
 .citation-container {

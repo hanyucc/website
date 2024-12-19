@@ -456,6 +456,22 @@ PEOPLE = {
   'alice-lai': Person(
     name = 'Alice Lai',
     website = 'https://www.linkedin.com/in/alicelai5/'
+  ),
+  'amber-xiangli': Person(
+    name = 'Yuanbo Xiangli',
+    website = 'https://kam1107.github.io/'
+  ),
+  'ruojin-cai': Person(
+    name = 'Ruojin Cai',
+    website = 'https://www.cs.cornell.edu/~ruojin/'
+  ),
+  'jeffrey-byrne': Person(
+    name = 'Jeffrey Byrne',
+    website = 'https://www.jeffreybyrne.com/'
+  ),
+  'noah-snavely': Person(
+    name = 'Noah Snavely',
+    website = 'https://www.cs.cornell.edu/~snavely/'
   )
 }
 
@@ -497,13 +513,42 @@ ABOUT_ME = AboutMe(
 )
 
 BIO = '''
-<p>I am first year Ph.D. student in Computer Science at <a href="https://www.cornell.edu/">Cornell University</a> working with <a href="https://www.cs.cornell.edu/~snavely/">Prof. Noah Snavely</a>. 
-Before starting my Ph.D., I received my M.S. and B.S. in Computer Science from <a href="https://www.cmu.edu/">Carnegie Mellon University</a>, advised by <a href="https://www.cs.cmu.edu/~igkioule/">Prof. Ioannis Gkioulekas</a>. 
+<p>I am a first year Ph.D. student in Computer Science at <a href="https://www.cornell.edu/">Cornell University</a>, advised by <a href="https://www.cs.cornell.edu/~snavely/">Prof. Noah Snavely</a>.
+Before starting my Ph.D., I received my M.S. and B.S. in Computer Science from <a href="https://www.cmu.edu/">Carnegie Mellon University</a>, where I was advised by <a href="https://www.cs.cmu.edu/~igkioule/">Prof. Ioannis Gkioulekas</a>.
 My research interest lies in differentiable and neural rendering for 3D reconstruction, and more broadly at the intersection of graphics and 3D vision.</p>
 '''
 
 PUBLICATIONS = {
-  'pub1': Publication(
+  'pub3': Publication(
+    image =  'data/images/thumbnails/dopp++.png',
+    title =  'Doppelgangers++: Improved Visual Disambiguation with Geometric 3D Features',
+    authors =  [
+      PEOPLE['amber-xiangli'],
+      PEOPLE['ruojin-cai'],
+      PEOPLE['hanyu-chen'],
+      PEOPLE['jeffrey-byrne'],
+      PEOPLE['noah-snavely']
+    ],
+    venue = 'arXiv preprint, 2024',
+    resources = [
+      Resource(
+        icon = FontAwesomeIcons.GLOBE,
+        name = 'project',
+        path = 'https://doppelgangers25.github.io/doppelgangers_plusplus/'
+      ),
+      Resource(
+        icon = FontAwesomeIcons.PDF,
+        name = 'paper',
+        path = 'data/papers/doppelgangers_plusplus.pdf'
+      ),
+      Resource(
+        icon = FontAwesomeIcons.BOOK,
+        name = 'arXiv',
+        path = 'https://arxiv.org/abs/2412.05826'
+      )
+    ]
+  ),
+  'pub2': Publication(
     image =  'data/images/thumbnails/fast_dipole_sums.png',
     title =  '3D Reconstruction with Fast Dipole Sums',
     authors =  [
@@ -530,7 +575,7 @@ PUBLICATIONS = {
       )
     ]
   ),
-  'pub2': Publication(
+  'pub1': Publication(
     image =  'data/images/thumbnails/volumetric_opaque_solids.png',
     title =  'Objects as Volumes: A Stochastic Geometry View of Opaque Solids',
     authors =  [
