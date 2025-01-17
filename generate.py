@@ -137,7 +137,7 @@ class AboutMe:
             id="profile-pic"
             class="float-left"
             src="{self.image}"
-            title="Photo taken in front of Mt. Fuji"
+            title=""
             alt="Hanyu"
           />
         </div>
