@@ -185,7 +185,7 @@ class Home:
     return pub_list
 
   def get_teaching_list_html(self):
-    teaching_list = '<ul>'
+    teaching_list = ''
     for course in self.courses:
       course_links = ''
       for i in range(len(course.semesters)):
@@ -201,9 +201,8 @@ class Home:
             {course.semesters[i].name + trailing_mark}
           '''
       teaching_list += f'''
-        <li>
-          <div class="d-flex flex-row pb-4">
-            <div class="d-flex flex-column pl-4">
+          <div class="d-flex flex-row pb-3">
+            <div class="d-flex flex-column pl-3">
               <div>
                 {course.name}
               </div>
@@ -212,10 +211,8 @@ class Home:
               </div>
             </div>
           </div>
-        </li>
       '''
 
-    teaching_list += '</ul>'
 
     return teaching_list
 
@@ -275,7 +272,7 @@ class Home:
             {teaching_list}
           </div>
           <div class="music-player-skip"></div>
-          <iframe height="175" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/%E6%B2%B3%E5%8C%97%E5%A2%A8%E9%BA%92%E9%BA%9F/1545534900?i=1545535020&amp;itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1545535020&amp;theme=light" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;"></iframe>
+          <iframe height="175" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/marunouchi-sadistic/1384341676?i=1384341683&amp;itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1384341683&amp;theme=light" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;"></iframe>
           </div>
           <div class="faux-footer"></div>
         <div class="bottom-centered">
@@ -494,11 +491,11 @@ ABOUT_ME = AboutMe(
       name='Github',
       path='https://github.com/hanyucc'
     ),
-    # Resource(
-    #   icon=FontAwesomeIcons.GRAD_CAP,
-    #   name='Google Scholar',
-    #   path='https://scholar.google.com'
-    # ),
+    Resource(
+      icon=FontAwesomeIcons.GRAD_CAP,
+      name='Google Scholar',
+      path='https://scholar.google.com/citations?user=pyISEOcAAAAJ&hl=en'
+    ),
     Resource(
       icon=FontAwesomeIcons.LINKEDIN,
       name='LinkedIn',
@@ -606,6 +603,16 @@ PUBLICATIONS = {
 }
 
 COURSES = [
+  Course(
+    role = 'Teaching Assistant',
+    name = 'Data Structures and Functional Programming (Cornell CS 3110)',
+    semesters = [
+      Resource(
+        name='Spring 2025',
+        path='https://www.cs.cornell.edu/courses/cs3110/2025sp/'
+      )
+    ]
+  ),
   Course(
     role = 'Teaching Assistant',
     name = 'Computer Graphics Practicum (Cornell CS 4621)',
