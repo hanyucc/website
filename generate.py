@@ -80,7 +80,7 @@ class Publication:
     for resource in self.resources:
       resource_list += f'''
         <div class="pr-3">
-          <i class="{resource.icon}"></i>
+          <i class="{resource.icon}" style="color: #353d42;"></i>
           <a href="{resource.path}">
             {resource.name}
           </a>
@@ -111,8 +111,9 @@ class Video:
     self.id = id
 
 class AboutMe:
-  def __init__(self, name, image, resources):
+  def __init__(self, name, name_chinese, image, resources):
     self.name = name
+    self.name_chinese = name_chinese
     self.image = image
     self.resources = resources
 
@@ -121,7 +122,7 @@ class AboutMe:
     for resource in self.resources:
       links += f'''
         <div class="d-block profile-row">
-          <i class="{resource.icon}"></i>
+          <i class="{resource.icon}" style="color: #353d42;"></i>
           <a
             class="pl-2"
             href="{resource.path}"
@@ -143,7 +144,7 @@ class AboutMe:
         </div>
         <div class="col">
           <div class="d-block profile-row">
-            <h1 class="name">{self.name}</h1>
+            <h1 class="name">{self.name}&nbsp;&nbsp;<span style="vertical-align: baseline; font-size: 2.4rem">{self.name_chinese}</span></h1>
           </div>
           {links}
         </div>
@@ -272,9 +273,10 @@ class Home:
             {teaching_list}
           </div>
           <div class="music-player-skip"></div>
-          <iframe height="175" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/marunouchi-sadistic/1384341676?i=1384341683&amp;itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1384341683&amp;theme=light" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;"></iframe>
-          </div>
-          <div class="faux-footer"></div>
+          <iframe allow="autoplay *; encrypted-media *; clipboard-write" height="175" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/marunouchi-sadistic/1384341676?i=1384341683&amp;itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1384341683&amp;theme=light" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;" title="Media player" width="100%"></iframe>
+        </div>
+
+        <div class="faux-footer"></div>
         <div class="bottom-centered">
           Design and source code based on <br><a href="https://www.bailey-miller.com/">Bailey Miller's website</a>.
         </div>
@@ -473,7 +475,8 @@ PEOPLE = {
 }
 
 ABOUT_ME = AboutMe(
-  name = 'Hanyu Chen&nbsp;&nbsp;陈涵宇',
+  name = 'Hanyu Chen',
+  name_chinese = '陈涵宇',
   image = 'data/images/profile.jpg',
   resources=[
     # Resource(
@@ -510,8 +513,8 @@ ABOUT_ME = AboutMe(
 )
 
 BIO = '''
-<p>I am a first year Ph.D. student in Computer Science at <a href="https://www.cornell.edu/">Cornell University</a>, advised by <a href="https://www.cs.cornell.edu/~snavely/">Prof. Noah Snavely</a>.
-Before starting my Ph.D., I received my M.S. and B.S. in Computer Science from <a href="https://www.cmu.edu/">Carnegie Mellon University</a>, where I was advised by <a href="https://www.cs.cmu.edu/~igkioule/">Prof. Ioannis Gkioulekas</a>.
+<p>I am a first year Ph.D. student in Computer Science at <a href="https://www.cornell.edu/">Cornell University</a>, advised by Professor <a href="https://www.cs.cornell.edu/~snavely/">Noah Snavely</a>.
+Before starting my Ph.D., I received my M.S. and B.S. in Computer Science from <a href="https://www.cmu.edu/">Carnegie Mellon University</a>, where I was advised by Professor <a href="https://www.cs.cmu.edu/~igkioule/">Ioannis Gkioulekas</a>.
 My research interest lies in differentiable and neural rendering for 3D reconstruction, and more broadly at the intersection of graphics and 3D vision.</p>
 '''
 
@@ -526,7 +529,7 @@ PUBLICATIONS = {
       PEOPLE['jeffrey-byrne'],
       PEOPLE['noah-snavely']
     ],
-    venue = 'arXiv preprint, 2024',
+    venue = 'IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025',
     resources = [
       Resource(
         icon = FontAwesomeIcons.GLOBE,
@@ -581,7 +584,7 @@ PUBLICATIONS = {
       PEOPLE['alice-lai'],
       PEOPLE['ioannis-gkioulekas']
     ],
-    venue = 'IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024 <br><span style="color: #E89032;">(best student paper honorable mention)</span>',
+    venue = 'IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024 <br><span style="color: #DE6E4B;">(best student paper honorable mention)</span>',
     resources = [
       Resource(
         icon = FontAwesomeIcons.GLOBE,
