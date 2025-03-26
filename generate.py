@@ -152,11 +152,54 @@ class AboutMe:
     '''
 
 class Home:
-  def __init__(self, about_me, bio, publications = [], courses = []):
+  def __init__(self, about_me, bio, publications = [], courses = [], music = []):
     self.about_me = about_me
     self.bio = bio
     self.publications = publications
     self.courses = courses
+    self.music = music
+
+  def get_music_list_html(self):
+    music_list = ''
+    counter = 0
+
+    for music_link in self.music:
+      if counter % 3 == 0:
+        music_list += '<div>'
+      music_list += f'''
+        <iframe style="margin-left: 12px; margin-right: 12px" src="https://open.spotify.com/embed/track/{music_link}?utm_source=generator&theme=0" width="30%" height="170" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>\n
+      '''
+      if counter % 3 == 2:
+        music_list += '</div>'
+      counter += 1
+    
+    if counter % 3 != 0:
+      while counter % 3 != 0:
+        music_list += '<iframe style="margin-left: 12px; margin-right: 12px" width="30%" height="170" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>\n'
+        counter += 1
+      music_list += '</div>'
+
+    music_list =  f'''
+      <!-- Collapsible Music Gallery Section -->
+      <div class="collapse" id="musicGalleryCollapse">
+        <div class="card card-body" style="background-color: #F8F7F6; border-style: none; margin-bottom: 0; text-align: center; padding: 0.75em; padding-left: 0; padding-right: 0;">
+          {music_list}
+        </div>
+      </div>
+      
+      <script>
+        var musicGalleryCollapse = document.getElementById('musicGalleryCollapse');
+        var collapseArrow = document.getElementById('collapseArrow');
+
+        musicGalleryCollapse.addEventListener('show.bs.collapse', function () {{
+          collapseArrow.style.transform = 'rotate(90deg)';
+        }});
+        musicGalleryCollapse.addEventListener('hide.bs.collapse', function () {{
+          collapseArrow.style.transform = 'rotate(0deg)';
+        }});
+      </script>
+    '''
+    return music_list
 
   def get_publications_list_html(self):
     pub_list = ''
@@ -238,6 +281,7 @@ class Home:
     about_me_section = self.about_me.get_html()
     publications_list = self.get_publications_list_html()
     teaching_list = self.get_teaching_list_html()
+    music_list = self.get_music_list_html()
 
     body.append(BeautifulSoup('''
       <!-- Google tag (gtag.js) -->
@@ -258,8 +302,9 @@ class Home:
       <div class="container">
         <div class="d-flex flex-column pl-5 pt-3">
           <div>
-            <p>{self.bio}</p>
+            <p>{self.bio} <span style="margin: 0 5px; color: #8a948d;">—</span> <a class="text-decoration-none" data-bs-toggle="collapse" href="#musicGalleryCollapse" role="button" aria-expanded="false" aria-controls="musicGalleryCollapse" style="color: #8a948d;"> some music that i like <span id="collapseArrow" style="color: #8a948d; display:inline-block; transition: transform 0.3s; transform-origin: 60% 60%;">&raquo;</span></a></p>
           </div>
+          {music_list}
           <div class="pt-2">
             <h3>Publications</h3>
             <hr/>
@@ -272,171 +317,18 @@ class Home:
             <hr/>
             {teaching_list}
           </div>
-          <div class="music-player-skip"></div>
-          <iframe allow="autoplay *; encrypted-media *; clipboard-write" height="175" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/marunouchi-sadistic/1384341676?i=1384341683&amp;itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1384341683&amp;theme=light" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;" title="Media player" width="100%"></iframe>
         </div>
 
         <div class="faux-footer"></div>
         <div class="bottom-centered">
           Design and source code based on <br><a href="https://www.bailey-miller.com/">Bailey Miller's website</a>.
         </div>
+
+        <script src="assets/bootstrap.bundle.min.js"></script>
       </div>
     ''', 'html.parser'))
     with open(os.path.join(path, 'index.html'), 'w', encoding='utf-8') as file:
       file.write(str(soup))
-
-class Project:
-  def __init__(self,
-               image,
-               image_caption,
-               abstract,
-               videos = [],
-               resources = ProjectResources(),
-               acknowledgements= '',
-               citation = ''):
-    self.image = image
-    self.image_caption = image_caption
-    self.abstract = abstract
-    self.videos = videos
-    self.resources = resources
-    self.acknowledgements = acknowledgements
-    self.citation = citation
-
-  def create_section(self, name, content):
-    return f'''
-      <div>
-        <h2 class="mt-4 font-weight-normal">{name}</h2>
-        <hr>
-        {content}
-      </div>
-    '''
-
-  def create_resources_list(self, name, resources):
-    resources_list = ''
-    for resource in resources:
-      resources_list += f'''
-        <div class="container mt-1 mb-1">
-          <i class="{resource.icon}"></i>
-          <a href="{resource.path}">
-            {resource.name}
-          </a>
-        </div>
-        '''
-    return f'''
-      <div>
-        <h4 class="mt-4 font-weight-light">
-          {name}
-        </h4>
-        {resources_list}
-      </div>
-    '''
-
-  def get_abstract_html(self):
-    if len(self.abstract) == 0:
-      return ''
-    return self.create_section('Abstract', f'<p>{self.abstract}</p>')
-
-  def get_video_html(self):
-    if len(self.videos) == 0:
-      return ''
-    video_list = '<div class="container">'
-    for video in self.videos:
-      video_list += f'''
-        <div class="img-container">
-        <h4 class="font-weight-light">{video.name}</h4>
-          <iframe class="embed-responsive-item project-video"
-                  src="https://www.youtube.com/embed/{video.id}" allowfullscreen>
-          </iframe>
-        </div>
-      '''
-    video_list += '</div>'
-
-    return self.create_section('Videos', video_list)
-
-  def get_resources_html(self):
-    resources_html = ''
-
-    if len(self.resources.publication) > 0:
-      resources_html += self.create_resources_list('Publication', self.resources.publication)
-
-    if len(self.resources.code) > 0:
-      resources_html += self.create_resources_list('Code', self.resources.code)
-
-    return self.create_section('Resources', resources_html)
-
-  def get_acknowledgements_html(self):
-    if len(self.acknowledgements) == 0:
-      return ''
-    return self.create_section('Acknowledgements', f'<p>{self.acknowledgements}</p>')
-
-  def get_citation_html(self):
-    if len(self.citation) == 0:
-      return ''
-
-    return self.create_section('Cite', f'''
-      <script>
-      function copyText() {{
-        var text = document.getElementById("citation-to-copy")
-        navigator.clipboard.writeText(text.innerText)
-      }}
-      </script>
-      <div class="code-background">
-        <button class="code-copy-btn" onClick=copyText()>
-          <i class="{FontAwesomeIcons.COPY}"></i>
-        </button>
-        <pre id="citation-to-copy">
-        {self.citation}</pre>
-      </div>
-      '''
-    )
-
-  def generate(self, path, publication):
-    soup = BeautifulSoup('<!DOCTYPE html> <html></html>', 'html.parser')
-
-    # add styling
-    head = soup.new_tag('head')
-    soup.html.append(head)
-    links = [
-      soup.new_tag('link', rel='stylesheet', type='text/css',
-                   href=os.path.join('../../assets', style_asset))
-      for style_asset in STYLE_ASSETS
-    ]
-    [head.append(link) for link in links]
-
-    # construct page
-    body = soup.new_tag('body')
-    soup.html.append(body)
-    body.append(BeautifulSoup(f'''
-      <div class="container">
-        <nav class="navbar navbar-expand-lg">
-          <div class="container-fluid">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a href="../../">
-                <i class="{FontAwesomeIcons.BACK_ARROW}"></i>
-                home
-                </a>
-                </li>
-            </ul>
-          </div>
-        </nav>
-        <h1 class="card-title font-weight-normal">{publication.title}</h1>
-        <h5 class="font-weight-light"> {publication.get_author_names()} </h5>
-        <img src={project.image} class="card-img-top mt-3" alt="{publication.title}-teaser">
-        <p class="font-italic mt-2">{project.image_caption} </p>
-        {self.get_abstract_html()}
-        {self.get_resources_html()}
-        {self.get_video_html()}
-        {self.get_citation_html()}
-        {self.get_acknowledgements_html()}
-      </div>
-    ''', 'html.parser'))
-
-    if not os.path.exists(path):
-      os.makedirs(path)
-
-    with open(os.path.join(path, 'index.html'), "w") as file:
-      file.write(str(soup.prettify(formatter="html")))
 
 PEOPLE = {
   'hanyu-chen': Person(
@@ -513,9 +405,9 @@ ABOUT_ME = AboutMe(
 )
 
 BIO = '''
-<p>I am a first year Ph.D. student in Computer Science at <a href="https://www.cornell.edu/">Cornell University</a>, advised by Professor <a href="https://www.cs.cornell.edu/~snavely/">Noah Snavely</a>.
+I am a first year Ph.D. student in Computer Science at <a href="https://www.cornell.edu/">Cornell University</a>, advised by Professor <a href="https://www.cs.cornell.edu/~snavely/">Noah Snavely</a>.
 Before starting my Ph.D., I received my M.S. and B.S. in Computer Science from <a href="https://www.cmu.edu/">Carnegie Mellon University</a>, where I was advised by Professor <a href="https://www.cs.cmu.edu/~igkioule/">Ioannis Gkioulekas</a>.
-My research interest lies in differentiable and neural rendering for 3D reconstruction, and more broadly at the intersection of graphics and 3D vision.</p>
+My research interest lies in differentiable and neural rendering for 3D reconstruction, and more broadly at the intersection of graphics and 3D vision.
 '''
 
 PUBLICATIONS = {
@@ -647,48 +539,7 @@ COURSES = [
   )
 ]
 
-PROJECT_PAGES = {
-  # 'pub1': Project(
-  #   image = 'https://placehold.co/800x400.png',
-  #   image_caption = 'placeholder caption',
-  #   abstract = 'placeholder abstract',
-  #   resources = ProjectResources(
-  #     publication = [
-  #       Resource(
-  #         icon = FontAwesomeIcons.PDF,
-  #         path = '../../data/papers/pub1.pdf',
-  #         name = 'Paper'
-  #       ),
-  #       Resource(
-  #         icon = FontAwesomeIcons.BOOK,
-  #         path = 'https://www.acm.org/',
-  #         name =  'Publisher\'s Version'
-  #       ),
-  #       Resource(
-  #         icon =  FontAwesomeIcons.ARCHIVE,
-  #         path =  'https://arxiv.org',
-  #         name =  'ArXiv Version'
-  #       )
-  #     ],
-  #     code = [
-  #       Resource(
-  #         icon =  FontAwesomeIcons.GITHUB,
-  #         path =  'https://github.com',
-  #         name = 'Github project with full source code'
-  #       )
-  #     ],
-  #   ),
-  #   videos = [
-  #     Video(
-  #       name =  'presentation slides',
-  #       id = 'J9o7kgrpco0'
-  #     )
-  #   ],
-  #   acknowledgements = 'This work was generously supported by XYZ',
-  #   citation = ''''''
-  # )
-}
-
+MUSIC = ['0YJ9FWWHn9EfnN0lHwbzvV', '2LUghQsEqohjtlwsfeC6hJ', '4lzrWjF6IgJr659sQteyyM', '6YyEDnoATYdfTUCE8TjhtT', '4qW1WqsyYBi0mPjhzP2XpN', '26WsvlxQcD4tQRduvT2b0Q']
 
 if __name__ == '__main__':
   directory = 'hanyuc.com/'
@@ -698,10 +549,6 @@ if __name__ == '__main__':
   home = Home(about_me=ABOUT_ME,
               bio=BIO,
               publications=PUBLICATIONS,
-              courses=COURSES)
+              courses=COURSES,
+              music=MUSIC)
   home.generate(directory)
-
-  for id, project in PROJECT_PAGES.items():
-    project_path = os.path.join(directory, f'project/{id}')
-    paper = PUBLICATIONS[id]
-    project.generate(project_path, paper)

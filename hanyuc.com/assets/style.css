@@ -1,12 +1,12 @@
 body {
   padding-bottom: 50px;
-  background-color: #f8f8fa;
+  background-color: #F8F7F6;
   font-size: 115%;
 }
 
 #profile-pic {
-  height: 250px;
-  width: 250px;
+  height: 260px;
+  width: 260px;
   display: block;
   padding: 0.1rem;
   border: 1px solid #dee2e6;
@@ -184,7 +184,7 @@ a:hover {
 * {
   font-family: 'selawik', 'Noto Sans SC', sans-serif;
   line-height: 1.6;
-  color:  #353d42;
+  color:  #252b2e;
 }
 
 @media (min-width: 576px) {

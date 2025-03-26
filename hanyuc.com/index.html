@@ -56,11 +56,36 @@
 <div class="d-flex flex-column pl-5 pt-3">
 <div>
 <p>
-<p>I am a first year Ph.D. student in Computer Science at <a href="https://www.cornell.edu/">Cornell University</a>, advised by Professor <a href="https://www.cs.cornell.edu/~snavely/">Noah Snavely</a>.
+I am a first year Ph.D. student in Computer Science at <a href="https://www.cornell.edu/">Cornell University</a>, advised by Professor <a href="https://www.cs.cornell.edu/~snavely/">Noah Snavely</a>.
 Before starting my Ph.D., I received my M.S. and B.S. in Computer Science from <a href="https://www.cmu.edu/">Carnegie Mellon University</a>, where I was advised by Professor <a href="https://www.cs.cmu.edu/~igkioule/">Ioannis Gkioulekas</a>.
-My research interest lies in differentiable and neural rendering for 3D reconstruction, and more broadly at the intersection of graphics and 3D vision.</p>
-</p>
+My research interest lies in differentiable and neural rendering for 3D reconstruction, and more broadly at the intersection of graphics and 3D vision.
+ <span style="margin: 0 5px; color: #8a948d;">—</span> <a aria-controls="musicGalleryCollapse" aria-expanded="false" class="text-decoration-none" data-bs-toggle="collapse" href="#musicGalleryCollapse" role="button" style="color: #8a948d;"> some music that i like <span id="collapseArrow" style="color: #8a948d; display:inline-block; transition: transform 0.3s; transform-origin: 60% 60%;">»</span></a></p>
 </div>
+<!-- Collapsible Music Gallery Section -->
+<div class="collapse" id="musicGalleryCollapse">
+<div class="card card-body" style="background-color: #F8F7F6; border-style: none; margin-bottom: 0; text-align: center; padding: 0.75em; padding-left: 0; padding-right: 0;">
+<div>
+<iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen="" frameborder="0" height="170" src="https://open.spotify.com/embed/track/0YJ9FWWHn9EfnN0lHwbzvV?utm_source=generator&amp;theme=0" style="margin-left: 12px; margin-right: 12px" width="30%"></iframe>
+<iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen="" frameborder="0" height="170" src="https://open.spotify.com/embed/track/2LUghQsEqohjtlwsfeC6hJ?utm_source=generator&amp;theme=0" style="margin-left: 12px; margin-right: 12px" width="30%"></iframe>
+<iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen="" frameborder="0" height="170" src="https://open.spotify.com/embed/track/4lzrWjF6IgJr659sQteyyM?utm_source=generator&amp;theme=0" style="margin-left: 12px; margin-right: 12px" width="30%"></iframe>
+</div><div>
+<iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen="" frameborder="0" height="170" src="https://open.spotify.com/embed/track/6YyEDnoATYdfTUCE8TjhtT?utm_source=generator&amp;theme=0" style="margin-left: 12px; margin-right: 12px" width="30%"></iframe>
+<iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen="" frameborder="0" height="170" src="https://open.spotify.com/embed/track/4qW1WqsyYBi0mPjhzP2XpN?utm_source=generator&amp;theme=0" style="margin-left: 12px; margin-right: 12px" width="30%"></iframe>
+<iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen="" frameborder="0" height="170" src="https://open.spotify.com/embed/track/26WsvlxQcD4tQRduvT2b0Q?utm_source=generator&amp;theme=0" style="margin-left: 12px; margin-right: 12px" width="30%"></iframe>
+</div>
+</div>
+</div>
+<script>
+        var musicGalleryCollapse = document.getElementById('musicGalleryCollapse');
+        var collapseArrow = document.getElementById('collapseArrow');
+
+        musicGalleryCollapse.addEventListener('show.bs.collapse', function () {
+          collapseArrow.style.transform = 'rotate(90deg)';
+        });
+        musicGalleryCollapse.addEventListener('hide.bs.collapse', function () {
+          collapseArrow.style.transform = 'rotate(0deg)';
+        });
+      </script>
 <div class="pt-2">
 <h3>Publications</h3>
 <hr/>
@@ -225,12 +250,11 @@ My research interest lies in differentiable and neural rendering for 3D reconstr
 </div>
 </div>
 </div>
-<div class="music-player-skip"></div>
-<iframe allow="autoplay *; encrypted-media *; clipboard-write" height="175" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/marunouchi-sadistic/1384341676?i=1384341683&amp;itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1384341683&amp;theme=light" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;" title="Media player" width="100%"></iframe>
 </div>
 <div class="faux-footer"></div>
 <div class="bottom-centered">
           Design and source code based on <br/><a href="https://www.bailey-miller.com/">Bailey Miller's website</a>.
         </div>
+<script src="assets/bootstrap.bundle.min.js"></script>
 </div>
 </body></html>
