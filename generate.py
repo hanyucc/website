@@ -132,7 +132,7 @@ class AboutMe:
         </div>
       '''
     return f'''
-      <div class="d-flex pl-5 pt-5 justify-content-start">
+      <div class="d-flex pl-2 pr-2 pt-5 justify-content-start">
         <div>
           <img
             id="profile-pic"
@@ -144,7 +144,7 @@ class AboutMe:
         </div>
         <div class="col">
           <div class="d-block profile-row">
-            <h1 class="name">{self.name}&nbsp;&nbsp;<span style="vertical-align: baseline; font-size: 2.4rem">{self.name_chinese}</span></h1>
+            <h1 class="name">{self.name}&nbsp;<span style="vertical-align: baseline; font-size: 2.4rem">{self.name_chinese}</span></h1>
           </div>
           {links}
         </div>
@@ -167,15 +167,15 @@ class Home:
       if counter % 3 == 0:
         music_list += '<div>'
       music_list += f'''
-        <iframe style="margin-left: 12px; margin-right: 12px" src="https://open.spotify.com/embed/track/{music_link}?utm_source=generator&theme=0" width="30%" height="170" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>\n
+        <iframe style="margin-left: 1%; margin-right: 1%" src="https://open.spotify.com/embed/track/{music_link}?utm_source=generator&theme=0" width="30%" height="170" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>\n
       '''
       if counter % 3 == 2:
         music_list += '</div>'
       counter += 1
-    
+
     if counter % 3 != 0:
       while counter % 3 != 0:
-        music_list += '<iframe style="margin-left: 12px; margin-right: 12px" width="30%" height="170" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>\n'
+        music_list += '<iframe style="margin-left: 1%; margin-right: 1%" width="30%" height="170" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>\n'
         counter += 1
       music_list += '</div>'
 
@@ -186,7 +186,7 @@ class Home:
           {music_list}
         </div>
       </div>
-      
+
       <script>
         var musicGalleryCollapse = document.getElementById('musicGalleryCollapse');
         var collapseArrow = document.getElementById('collapseArrow');
@@ -300,7 +300,7 @@ class Home:
         {about_me_section}
       </div>
       <div class="container">
-        <div class="d-flex flex-column pl-5 pt-3">
+        <div class="d-flex flex-column pl-2 pr-2 pt-3">
           <div>
             <p>{self.bio} <span style="margin: 0 5px; color: #8a948d;">—</span> <a class="text-decoration-none" data-bs-toggle="collapse" href="#musicGalleryCollapse" role="button" aria-expanded="false" aria-controls="musicGalleryCollapse" style="color: #8a948d;"> some music that i like <span id="collapseArrow" style="color: #8a948d; display:inline-block; transition: transform 0.3s; transform-origin: 60% 60%;">&raquo;</span></a></p>
           </div>
