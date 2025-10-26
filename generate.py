@@ -79,8 +79,8 @@ class Publication:
     resource_list = ''
     for resource in self.resources:
       resource_list += f'''
-        <div class="pr-3">
-          <i class="{resource.icon}" style="color: #353d42;"></i>
+        <div class="pr-4">
+          <i class="{resource.icon}"></i>
           <a href="{resource.path}">
             {resource.name}
           </a>
@@ -122,7 +122,7 @@ class AboutMe:
     for resource in self.resources:
       links += f'''
         <div class="d-block profile-row">
-          <i class="{resource.icon}" style="color: #353d42;"></i>
+          <i class="{resource.icon}"></i>
           <a
             class="pl-2"
             href="{resource.path}"
@@ -186,7 +186,7 @@ class Home:
     music_list =  f'''
       <!-- Collapsible Music Gallery Section -->
       <div class="collapse" id="musicGalleryCollapse">
-        <div class="card card-body" style="background-color: #F8F7F6; border-style: none; margin-bottom: 0; text-align: center; padding: 0em; padding-left: 0; padding-right: 0;">
+        <div class="card card-body" style="background-color: #F4F6F5; border-style: none; margin-bottom: 0; text-align: center; padding: 0em; padding-left: 0; padding-right: 0;">
           {music_list}
         </div>
       </div>
@@ -460,7 +460,7 @@ PUBLICATIONS = {
       PEOPLE['jeffrey-byrne'],
       PEOPLE['noah-snavely']
     ],
-    venue = 'IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025',
+    venue = 'IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025 <br><span style="color: #DE6E4B;">(highlight)</span>',
     resources = [
       Resource(
         icon = FontAwesomeIcons.GLOBE,
