@@ -166,23 +166,27 @@ class Home:
     for music_link in self.music:
       if counter % 3 == 0:
         music_list += '<div>'
+      
+      left_margin = '0%' if counter % 3 == 0 else '0.5%'
+      right_margin = '0.5%' if counter % 3 != 2 else '0%'
+
       music_list += f'''
-        <iframe style="margin-left: 1%; margin-right: 1%" src="https://open.spotify.com/embed/track/{music_link}?utm_source=generator&theme=0" width="30%" height="170" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>\n
+        <iframe style="margin-left: {left_margin}; margin-right: {right_margin}" src="https://open.spotify.com/embed/track/{music_link}?utm_source=generator&theme=0" width="32%" height="165" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>\n
       '''
       if counter % 3 == 2:
         music_list += '</div>'
       counter += 1
 
-    if counter % 3 != 0:
-      while counter % 3 != 0:
-        music_list += '<iframe style="margin-left: 1%; margin-right: 1%" width="30%" height="170" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>\n'
-        counter += 1
-      music_list += '</div>'
+    # if counter % 3 != 0:
+    #   while counter % 3 != 0:
+    #     music_list += f'<iframe style="margin-left: 1%; margin-right: 1%" width="32%" height="170" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>\n'
+    #     counter += 1
+    #   music_list += '</div>'
 
     music_list =  f'''
       <!-- Collapsible Music Gallery Section -->
       <div class="collapse" id="musicGalleryCollapse">
-        <div class="card card-body" style="background-color: #F8F7F6; border-style: none; margin-bottom: 0; text-align: center; padding: 0.75em; padding-left: 0; padding-right: 0;">
+        <div class="card card-body" style="background-color: #F8F7F6; border-style: none; margin-bottom: 0; text-align: center; padding: 0em; padding-left: 0; padding-right: 0;">
           {music_list}
         </div>
       </div>
@@ -363,6 +367,18 @@ PEOPLE = {
   'noah-snavely': Person(
     name = 'Noah Snavely',
     website = 'https://www.cs.cornell.edu/~snavely/'
+  ),
+  'jingsen-zhu': Person(
+    name = 'Jingsen Zhu',
+    website = 'https://jingsenzhu.github.io/'
+  ),
+  'joy-zhang': Person(
+    name = 'Joy Xiaoji Zhang',
+    website = 'https://www.cs.cornell.edu/~joyxiaojizhang/'
+  ),
+  'steve-marschner': Person(
+    name = 'Steve Marschner',
+    website = 'https://www.cs.cornell.edu/~srm/'
   )
 }
 
@@ -411,6 +427,29 @@ My research interest lies in differentiable and neural rendering for 3D reconstr
 '''
 
 PUBLICATIONS = {
+  'pub4': Publication(
+    image =  'data/images/thumbnails/hairformer.png',
+    title =  'HairFormer: Transformer-Based Dynamic Neural Hair Simulation',
+    authors =  [
+      PEOPLE['joy-zhang'],
+      PEOPLE['jingsen-zhu'],
+      PEOPLE['hanyu-chen'],
+      PEOPLE['steve-marschner']
+    ],
+    venue = 'arXiv preprint, 2025',
+    resources = [
+      Resource(
+        icon = FontAwesomeIcons.PDF,
+        name = 'paper',
+        path = 'data/papers/hairformer.pdf'
+      ),
+      Resource(
+        icon = FontAwesomeIcons.BOOK,
+        name = 'arXiv',
+        path = 'https://arxiv.org/abs/2507.12600'
+      )
+    ]
+  ),
   'pub3': Publication(
     image =  'data/images/thumbnails/dopp++.png',
     title =  'Doppelgangers++: Improved Visual Disambiguation with Geometric 3D Features',

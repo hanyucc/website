@@ -109,12 +109,12 @@ body {
 }
 
 a {
-  color: #59a96d;
+  color: #638572;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #488858
+  color: #4D6658;
 }
 
 /* @font-face {
