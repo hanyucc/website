@@ -166,7 +166,7 @@ class Home:
     for music_link in self.music:
       if counter % 3 == 0:
         music_list += '<div>'
-      
+
       left_margin = '0%' if counter % 3 == 0 else '0.5%'
       right_margin = '0.5%' if counter % 3 != 2 else '0%'
 
@@ -421,7 +421,7 @@ ABOUT_ME = AboutMe(
 )
 
 BIO = '''
-I am a first year Ph.D. student in Computer Science at <a href="https://www.cornell.edu/">Cornell University</a>, advised by Professor <a href="https://www.cs.cornell.edu/~snavely/">Noah Snavely</a>.
+I am a second-year Ph.D. student in Computer Science at <a href="https://www.cornell.edu/">Cornell University</a>, advised by Professor <a href="https://www.cs.cornell.edu/~snavely/">Noah Snavely</a>.
 Before starting my Ph.D., I received my M.S. and B.S. in Computer Science from <a href="https://www.cmu.edu/">Carnegie Mellon University</a>, where I was advised by Professor <a href="https://www.cs.cmu.edu/~igkioule/">Ioannis Gkioulekas</a>.
 My research interest lies in differentiable and neural rendering for 3D reconstruction, and more broadly at the intersection of graphics and 3D vision.
 '''
