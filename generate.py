@@ -199,7 +199,7 @@ class Home:
       pub_list += f'''
         <div>
           <div class="d-flex flex-column flex-md-row pb-4">
-            <a href="{main_link}">
+            <a href="{main_link}" style="display: block; width: 180px; flex-shrink: 0;">
               <img
                 src="{pub.image}"
                 class="publication-thumbnail img-responsive img-thumbnail mb-3 mb-md-0"
