@@ -161,33 +161,18 @@ class Home:
 
   def get_music_list_html(self):
     music_list = ''
-    counter = 0
 
     for music_link in self.music:
-      if counter % 3 == 0:
-        music_list += '<div>'
-
-      left_margin = '0%' if counter % 3 == 0 else '0.5%'
-      right_margin = '0.5%' if counter % 3 != 2 else '0%'
-
       music_list += f'''
-        <iframe style="margin-left: {left_margin}; margin-right: {right_margin}" src="https://open.spotify.com/embed/track/{music_link}?utm_source=generator&theme=0" width="32%" height="165" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>\n
+        <iframe src="https://open.spotify.com/embed/track/{music_link}?utm_source=generator&theme=0" width="100%" height="160" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>\n
       '''
-      if counter % 3 == 2:
-        music_list += '</div>'
-      counter += 1
-
-    # if counter % 3 != 0:
-    #   while counter % 3 != 0:
-    #     music_list += f'<iframe style="margin-left: 1%; margin-right: 1%" width="32%" height="170" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>\n'
-    #     counter += 1
-    #   music_list += '</div>'
-
+    
     music_list =  f'''
-      <!-- Collapsible Music Gallery Section -->
       <div class="collapse" id="musicGalleryCollapse">
         <div class="card card-body" style="background-color: #F4F6F5; border-style: none; margin-bottom: 0; text-align: center; padding: 0em; padding-left: 0; padding-right: 0;">
-          {music_list}
+          <div class="music-gallery-grid">
+            {music_list}
+          </div>
         </div>
       </div>
 
@@ -208,15 +193,22 @@ class Home:
   def get_publications_list_html(self):
     pub_list = ''
     for _, pub in self.publications.items():
+      # Automatically grab the first resource link (Project or Paper) to act as the main link
+      main_link = pub.resources[0].path if len(pub.resources) > 0 else '#'
+
       pub_list += f'''
         <div>
-          <div class="d-flex flex-row pb-4">
-            <img
-              src={pub.image}
-              class="publication-thumbnail img-responsive img-thumbnail"
-            />
+          <div class="d-flex flex-column flex-md-row pb-4">
+            <a href="{main_link}">
+              <img
+                src="{pub.image}"
+                class="publication-thumbnail img-responsive img-thumbnail mb-3 mb-md-0"
+              />
+            </a>
             <div class="d-flex flex-column pl-4">
-              <h5>{pub.title}</h5>
+              <a href="{main_link}" class="text-decoration-none" style="color: inherit;">
+                <h5>{pub.title}</h5>
+              </a>
               <div>
                 {pub.get_author_names()}
               </div>
@@ -306,7 +298,7 @@ class Home:
       <div class="container">
         <div class="d-flex flex-column pl-2 pr-2 pt-3">
           <div>
-            <p>{self.bio} <span style="margin: 0 5px; color: #8a948d;">—</span> <a class="text-decoration-none" data-bs-toggle="collapse" href="#musicGalleryCollapse" role="button" aria-expanded="false" aria-controls="musicGalleryCollapse" style="color: #8a948d;"> some music that i like <span id="collapseArrow" style="color: #8a948d; display:inline-block; transition: transform 0.3s; transform-origin: 60% 60%;">&raquo;</span></a></p>
+            <p>{self.bio} <span style="margin: 0 5px; color: #8A9A92;">—</span> <a class="text-decoration-none" data-bs-toggle="collapse" href="#musicGalleryCollapse" role="button" aria-expanded="false" aria-controls="musicGalleryCollapse" style="color: #8A9A92;"> some music that i like <span id="collapseArrow" style="color: #8A9A92; display:inline-block; transition: transform 0.3s; transform-origin: 60% 60%;">&raquo;</span></a></p>
           </div>
           {music_list}
           <div class="pt-2">
@@ -460,7 +452,7 @@ PUBLICATIONS = {
       PEOPLE['jeffrey-byrne'],
       PEOPLE['noah-snavely']
     ],
-    venue = 'IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025 <br><span style="color: #DE6E4B;">(highlight)</span>',
+    venue = 'IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025 <br><span class="award-highlight">(highlight)</span>',
     resources = [
       Resource(
         icon = FontAwesomeIcons.GLOBE,
@@ -515,7 +507,7 @@ PUBLICATIONS = {
       PEOPLE['alice-lai'],
       PEOPLE['ioannis-gkioulekas']
     ],
-    venue = 'IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024 <br><span style="color: #DE6E4B;">(best student paper honorable mention)</span>',
+    venue = 'IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024 <br><span class="award-highlight">(best student paper honorable mention)</span>',
     resources = [
       Resource(
         icon = FontAwesomeIcons.GLOBE,
@@ -578,7 +570,7 @@ COURSES = [
   )
 ]
 
-MUSIC = ['0YJ9FWWHn9EfnN0lHwbzvV', '2LUghQsEqohjtlwsfeC6hJ', '4lzrWjF6IgJr659sQteyyM', '6YyEDnoATYdfTUCE8TjhtT', '4qW1WqsyYBi0mPjhzP2XpN', '26WsvlxQcD4tQRduvT2b0Q']
+MUSIC = ['4SrRrB27n7fiRkQcPoKfpk', '1bAZV1EBTRi9t1cVg75i8t', '2nZ33CKRbgpJQJJQKHuGXb', '6tVahG14lCjexVQnYWKgwF', '7CqleiaEqHVazV19P532X9', '7Jh1bpe76CNTCgdgAdBw4Z']
 
 if __name__ == '__main__':
   directory = 'hanyuc.com/'

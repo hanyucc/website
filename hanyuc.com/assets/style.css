@@ -1,16 +1,85 @@
+/* =========================================
+   1. FONTS & GLOBALS
+   ========================================= */
+@font-face {
+  font-family: 'selawik';
+  src: url('fonts/selawik/selawk.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'selawik';
+  src: url('fonts/selawik/selawkb.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Noto Sans SC';
+  src: url('fonts/Noto_Sans/NotoSansSC-VariableFont_wght') format('truetype');
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+* {
+  font-family: 'selawik', 'Noto Sans SC', sans-serif;
+  line-height: 1.6;
+  color: #252b2e;
+}
+
 body {
   padding-bottom: 50px;
   background-color: #F4F6F5;
   font-size: 115%;
+  min-height: 80vh;
+  position: relative;
 }
 
+a {
+  color: #4B6E5D;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #344F42;
+}
+
+hr {
+  border-top: 2px solid #d8e0db;
+  opacity: 1;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* =========================================
+   2. LAYOUT & TYPOGRAPHY
+   ========================================= */
+.name {
+  margin-left: -5px;
+  margin-top: -10px;
+}
+
+.col {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.bottom-centered {
+  text-align: right;
+}
+
+.faux-footer {
+  height: 5rem;
+}
+
+/* =========================================
+   3. PROFILE & ICONS
+   ========================================= */
 #profile-pic {
-  height: 260px;
-  width: 260px;
+  height: 240px;
+  width: 240px;
   display: block;
-  padding: 0.1rem;
-  border: 1px solid #dee2e6;
-  border-radius: 0.1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 0.2rem;
 }
 
 .profile-row {
@@ -18,6 +87,15 @@ body {
   padding-bottom: 0px;
 }
 
+.fa {
+  width: 16px;
+  height: 16px;
+  text-align: center;
+}
+
+/* =========================================
+   4. PUBLICATIONS & AWARDS
+   ========================================= */
 .publication-thumbnail {
   width: 180px;
   height: 180px;
@@ -25,11 +103,38 @@ body {
   border-radius: 0.2rem;
   mix-blend-mode: multiply;
   object-fit: contain;
+  transition: transform 0.2s ease;
 }
 
-.citation-container {
-  overflow: hidden;
+.publication-thumbnail:hover {
+  transform: translateY(-2px); 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
+
+.award-highlight {
+  color: #CC665A;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+/* =========================================
+   5. MUSIC GALLERY
+   ========================================= */
+.music-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 7px 0;
+}
+
+.music-player-skip {
+  height: 2rem;
+}
+
+/* =========================================
+   6. EXTRAS (Citations, Code blocks, Video)
+   ========================================= */
+.citation-container { overflow: hidden; }
 
 .citation-content {
   position: absolute;
@@ -56,18 +161,6 @@ body {
   width: calc(250px * (16 / 9));
 }
 
-.code-copy-btn {
-  position: relative;
-  float: right;
-  border: none;
-  background-color: #e7e7e7;
-  border-radius: 5px;
-}
-
-.code-copy-btn:hover {
-  background-color: #d0d0d0;
-}
-
 .code-background {
   background-color: #f0f0f0;
   padding: 5px;
@@ -76,151 +169,28 @@ body {
   border-radius: 5px;
 }
 
-.fa {
-  width: 16px;
-  height: 16px;
-  text-align: center;
-}
-
-.name {
-  margin-left: -5px;
-}
-
-.col {
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-body {
-  min-height: 80vh;
+.code-copy-btn {
   position: relative;
+  float: right;
+  border: none;
+  background-color: #e7e7e7;
+  border-radius: 5px;
 }
 
-.faux-footer {
-  height: 5rem;
-}
+.code-copy-btn:hover { background-color: #d0d0d0; }
 
-.music-player-skip {
-  height: 2rem;
-}
-
-.bottom-centered {
-  text-align: right;
-}
-
-a {
-  color: #638572;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: #4D6658;
-}
-
-/* @font-face {
-  font-family: 'CrimsonText';
-  src: url('fonts/CrimsonText/CrimsonText-Regular.woff') format('woff'),
-    url('fonts/CrimsonText/CrimsonText-Regular.ttf') format('truetype');
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: 'CrimsonText';
-  src: url('fonts/CrimsonText/CrimsonText-Italic.woff') format('woff'),
-    url('fonts/CrimsonText/CrimsonText-Italic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'CrimsonText';
-  src: url('fonts/CrimsonText/CrimsonText-Bold.woff') format('woff'),
-    url('fonts/CrimsonText/CrimsonText-Bold.ttf') format('truetype');
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: 'CrimsonText';
-  src: url('fonts/CrimsonText/CrimsonText-BoldItalic.woff') format('woff'),
-    url('fonts/CrimsonText/CrimsonText-BoldItalic.ttf') format('truetype');
-  font-weight: bold;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'CrimsonText';
-  src: url('fonts/CrimsonText/CrimsonText-SemiBold.woff') format('woff'),
-    url('fonts/CrimsonText/CrimsonText-SemiBold.ttf') format('truetype');
-  font-weight: 600;
-}
-
-@font-face {
-  font-family: 'CrimsonText';
-  src: url('fonts/CrimsonText/CrimsonText-SemiBoldItalic.woff') format('woff'),
-    url('fonts/CrimsonText/CrimsonText-SemiBoldItalic.ttf') format('truetype');
-  font-weight: 600;
-  font-style: italic;
-} */
-
-@font-face {
-  font-family: 'selawik';
-  src: url('fonts/selawik/selawk.ttf') format('truetype');
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: 'selawik';
-  src: url('fonts/selawik/selawkb.ttf') format('truetype');
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: 'Noto Sans SC';
-  src: url('fonts/Noto_Sans/NotoSansSC-VariableFont_wght') format('truetype');
-  font-weight: 400 700; /* Define the range of weights available */
-  font-display: swap;
-}
-
-* {
-  font-family: 'selawik', 'Noto Sans SC', sans-serif;
-  line-height: 1.6;
-  color:  #252b2e;
-}
-
+/* =========================================
+   7. BOOTSTRAP MEDIA QUERIES
+   ========================================= */
 @media (min-width: 576px) {
-
-  .container,
-  .container-sm {
-    max-width: 700px
-  }
+  .container, .container-sm { max-width: 700px; }
 }
-
 @media (min-width: 768px) {
-
-  .container,
-  .container-md,
-  .container-sm {
-    max-width: 880px
-  }
+  .container, .container-md, .container-sm { max-width: 880px; }
 }
-
 @media (min-width: 992px) {
-
-  .container,
-  .container-lg,
-  .container-md,
-  .container-sm {
-    max-width: 950px
-  }
+  .container, .container-lg, .container-md, .container-sm { max-width: 950px; }
 }
-
 @media (min-width: 1200px) {
-
-  .container,
-  .container-lg,
-  .container-md,
-  .container-sm,
-  .container-xl {
-    max-width: 1100px
-  }
+  .container, .container-lg, .container-md, .container-sm, .container-xl { max-width: 1100px; }
 }
